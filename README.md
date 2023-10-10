@@ -16,6 +16,8 @@ This is a fork of the original MyNES emulator created by Ala Hadid in C# from 20
 - Near-exact accuracy cycle emulation core
 - Audio recorder
 - Screenshot
+- Palette Editor
+- Audio Channels Mixer
 
 ## To-do:
 - Add more renderers including OpenGL, and Vulkan, and replace the current DirectX 9 with DirectX 11 renderer
