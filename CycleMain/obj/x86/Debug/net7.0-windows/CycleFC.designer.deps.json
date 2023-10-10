@@ -1,0 +1,66 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "Microsoft.CSharp/4.7.0": {},
+      "SevenZip/19.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/SevenZip.dll": {
+            "assemblyVersion": "19.0.0.0",
+            "fileVersion": "19.0.0.0"
+          }
+        }
+      },
+      "SlimDX/4.0.13.44": {
+        "runtime": {
+          "lib/NET40/SlimDX.dll": {
+            "assemblyVersion": "4.0.13.43",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "System.Data.DataSetExtensions/4.5.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.Data.DataSetExtensions.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.6.26515.6"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Microsoft.CSharp/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
+      "path": "microsoft.csharp/4.7.0",
+      "hashPath": "microsoft.csharp.4.7.0.nupkg.sha512"
+    },
+    "SevenZip/19.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+Eeb/uvC0REvMlG1auBqlBMiFiPZs+WizlLroHPSKtBh/V7NR/qOocgk+/7S0lNzciYsurMCeJzUL7LYIqVnWw==",
+      "path": "sevenzip/19.0.0",
+      "hashPath": "sevenzip.19.0.0.nupkg.sha512"
+    },
+    "SlimDX/4.0.13.44": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Oj8ICZ3tIGvd93s5W6wSWXckDb3payQCo4fWp7GKPwnnGck7wEHHBZwnwfJJTdNb+t+IYr4HJCu07YhZ82xrIg==",
+      "path": "slimdx/4.0.13.44",
+      "hashPath": "slimdx.4.0.13.44.nupkg.sha512"
+    },
+    "System.Data.DataSetExtensions/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-221clPs1445HkTBZPL+K9sDBdJRB8UN8rgjO3ztB0CQ26z//fmJXtlsr6whGatscsKGBrhJl5bwJuKSA8mwFOw==",
+      "path": "system.data.datasetextensions/4.5.0",
+      "hashPath": "system.data.datasetextensions.4.5.0.nupkg.sha512"
+    }
+  }
+}

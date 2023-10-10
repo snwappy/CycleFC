@@ -449,10 +449,10 @@ namespace CycleMain
         private void Frm_main_FormClosing(object sender, FormClosingEventArgs e)
         {
             SaveSettings();
-            if (mainThread != null)
-                mainThread.Abort();
             if (this.NES != null)
                 this.NES.ShutDown();
+            if (mainThread != null)
+                Environment.Exit(0);
         }
         //Open rom
         private void toolStripButton1_Click(object sender, EventArgs e)
