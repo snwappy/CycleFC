@@ -148,7 +148,6 @@ namespace CycleMain
             this.toolStripSeparator23 = new System.Windows.Forms.ToolStripSeparator();
             this.consoleRegionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator24 = new System.Windows.Forms.ToolStripSeparator();
-            this.frameRateLimiterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.slotsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -169,7 +168,6 @@ namespace CycleMain
             this.toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
             this.nTSCUSAJapanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pALEuropeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator27 = new System.Windows.Forms.ToolStripSeparator();
             this.loadStateToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.loadStateAsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator28 = new System.Windows.Forms.ToolStripSeparator();
@@ -557,6 +555,7 @@ namespace CycleMain
             this.noLimiterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.noLimiterToolStripMenuItem.Text = "No limiter";
             this.noLimiterToolStripMenuItem.CheckedChanged += new System.EventHandler(this.noLimiterToolStripMenuItem_CheckedChanged);
+            this.noLimiterToolStripMenuItem.Click += new System.EventHandler(this.noLimiterToolStripMenuItem_Click);
             // 
             // toolStripSeparator8
             // 
@@ -998,8 +997,6 @@ namespace CycleMain
             this.toolStripSeparator23,
             this.consoleRegionToolStripMenuItem,
             this.toolStripSeparator24,
-            this.frameRateLimiterToolStripMenuItem,
-            this.toolStripSeparator27,
             this.loadStateToolStripMenuItem1,
             this.loadStateAsToolStripMenuItem1,
             this.toolStripSeparator28,
@@ -1061,12 +1058,6 @@ namespace CycleMain
             // 
             this.toolStripSeparator24.Name = "toolStripSeparator24";
             this.toolStripSeparator24.Size = new System.Drawing.Size(177, 6);
-            // 
-            // frameRateLimiterToolStripMenuItem
-            // 
-            this.frameRateLimiterToolStripMenuItem.Name = "frameRateLimiterToolStripMenuItem";
-            this.frameRateLimiterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.frameRateLimiterToolStripMenuItem.Text = "Frame Rate Limiter";
             // 
             // toolsToolStripMenuItem
             // 
@@ -1191,6 +1182,7 @@ namespace CycleMain
             this.autoToolStripMenuItem1.Name = "autoToolStripMenuItem1";
             this.autoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.autoToolStripMenuItem1.Text = "Auto";
+            this.autoToolStripMenuItem1.Click += new System.EventHandler(this.autoToolStripMenuItem1_Click);
             // 
             // toolStripSeparator26
             // 
@@ -1202,29 +1194,28 @@ namespace CycleMain
             this.nTSCUSAJapanToolStripMenuItem.Name = "nTSCUSAJapanToolStripMenuItem";
             this.nTSCUSAJapanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nTSCUSAJapanToolStripMenuItem.Text = "NTSC (USA, Japan)";
+            this.nTSCUSAJapanToolStripMenuItem.Click += new System.EventHandler(this.nTSCUSAJapanToolStripMenuItem_Click);
             // 
             // pALEuropeToolStripMenuItem
             // 
             this.pALEuropeToolStripMenuItem.Name = "pALEuropeToolStripMenuItem";
             this.pALEuropeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pALEuropeToolStripMenuItem.Text = "PAL (Europe)";
-            // 
-            // toolStripSeparator27
-            // 
-            this.toolStripSeparator27.Name = "toolStripSeparator27";
-            this.toolStripSeparator27.Size = new System.Drawing.Size(177, 6);
+            this.pALEuropeToolStripMenuItem.Click += new System.EventHandler(this.pALEuropeToolStripMenuItem_Click);
             // 
             // loadStateToolStripMenuItem1
             // 
             this.loadStateToolStripMenuItem1.Name = "loadStateToolStripMenuItem1";
             this.loadStateToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.loadStateToolStripMenuItem1.Text = "Load State";
+            this.loadStateToolStripMenuItem1.Click += new System.EventHandler(this.loadStateToolStripMenuItem1_Click);
             // 
             // loadStateAsToolStripMenuItem1
             // 
             this.loadStateAsToolStripMenuItem1.Name = "loadStateAsToolStripMenuItem1";
             this.loadStateAsToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.loadStateAsToolStripMenuItem1.Text = "Load State as";
+            this.loadStateAsToolStripMenuItem1.Click += new System.EventHandler(this.loadStateAsToolStripMenuItem1_Click);
             // 
             // toolStripSeparator28
             // 
@@ -1242,6 +1233,7 @@ namespace CycleMain
             this.saveStateAsToolStripMenuItem1.Name = "saveStateAsToolStripMenuItem1";
             this.saveStateAsToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.saveStateAsToolStripMenuItem1.Text = "Save State as";
+            this.saveStateAsToolStripMenuItem1.Click += new System.EventHandler(this.saveStateAsToolStripMenuItem1_Click);
             // 
             // toolStripSeparator29
             // 
@@ -1253,12 +1245,14 @@ namespace CycleMain
             this.saveSRAMToolStripMenuItem.Name = "saveSRAMToolStripMenuItem";
             this.saveSRAMToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveSRAMToolStripMenuItem.Text = "Save S-RAM";
+            this.saveSRAMToolStripMenuItem.Click += new System.EventHandler(this.saveSRAMToolStripMenuItem_Click);
             // 
             // loadSRAMToolStripMenuItem
             // 
             this.loadSRAMToolStripMenuItem.Name = "loadSRAMToolStripMenuItem";
             this.loadSRAMToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.loadSRAMToolStripMenuItem.Text = "Load S-RAM";
+            this.loadSRAMToolStripMenuItem.Click += new System.EventHandler(this.loadSRAMToolStripMenuItem_Click);
             // 
             // toolStripSeparator30
             // 
@@ -1555,7 +1549,6 @@ namespace CycleMain
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator23;
         private System.Windows.Forms.ToolStripMenuItem consoleRegionToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator24;
-        private System.Windows.Forms.ToolStripMenuItem frameRateLimiterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem slotsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
@@ -1576,7 +1569,6 @@ namespace CycleMain
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator26;
         private System.Windows.Forms.ToolStripMenuItem nTSCUSAJapanToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pALEuropeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator27;
         private System.Windows.Forms.ToolStripMenuItem loadStateToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem loadStateAsToolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator28;

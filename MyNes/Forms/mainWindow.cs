@@ -1149,5 +1149,113 @@ namespace CycleMain
             if (NES != null)
                 NES.PAUSE = !NES.PAUSE;
         }
+
+        private void autoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            nTSCUSAJapanToolStripMenuItem.Checked = false;
+            pALEuropeToolStripMenuItem.Checked = false;
+            autoToolStripMenuItem1.Checked = true;
+            Program.Settings.TVSystem = RegionFormat.NTSC;
+            Program.Settings.AutoSwitchTvformat = true;
+            ApplyVideoSettings();
+        }
+
+        private void pALEuropeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            nTSCUSAJapanToolStripMenuItem.Checked = false;
+            pALEuropeToolStripMenuItem.Checked = true;
+            autoToolStripMenuItem1.Checked = false;
+            Program.Settings.TVSystem = RegionFormat.PAL;
+            Program.Settings.AutoSwitchTvformat = false;
+            ApplyVideoSettings();
+        }
+
+        private void nTSCUSAJapanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            nTSCUSAJapanToolStripMenuItem.Checked = true;
+            pALEuropeToolStripMenuItem.Checked = false;
+            autoToolStripMenuItem1.Checked = false;
+            Program.Settings.TVSystem = RegionFormat.NTSC;
+            Program.Settings.AutoSwitchTvformat = false;
+            ApplyVideoSettings();
+        }
+
+        private void noLimiterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void loadStateToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            LoadState();
+        }
+
+        private void loadStateAsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog op = new OpenFileDialog();
+            op.Filter = "State File(*.esav)|*.esav";
+            if (op.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
+            {
+                Stream str = new FileStream(op.FileName, FileMode.Open, FileAccess.Read);
+                NES.LoadStateRequest(op.FileName, str);
+            }
+        }
+
+        private void saveStateAsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sav = new SaveFileDialog();
+            sav.Filter = "State File(*.esav)|*.esav";
+            if (sav.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
+            {
+                Stream str = new FileStream(sav.FileName, FileMode.Create, FileAccess.Write);
+                NES.SaveStateRequest(sav.FileName, str);
+            }
+        }
+
+        private void saveSRAMToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (NES != null)
+            {
+                NES.PAUSE = true;
+                if (!NES.Cartridge.HasSaveRam)
+                {
+                    if (MessageBox.Show("This game doesn't use S-RAM, do you want to force saving it?", "Save S-RAM",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.No)
+                        return;
+                }
+                SaveFileDialog save = new SaveFileDialog();
+                save.Filter = "S-RAM (*.sav)|*.sav";
+                if (save.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
+                {
+                    Stream str = new FileStream(save.FileName, FileMode.Create, FileAccess.Write);
+                    str.Write(NES.CpuMemory.srm, 0, 0x2000);
+                    str.Close();
+                }
+                NES.PAUSE = false;
+            }
+        }
+
+        private void loadSRAMToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (NES != null)
+            {
+                NES.PAUSE = true;
+                if (!NES.Cartridge.HasSaveRam)
+                {
+                    if (MessageBox.Show("This game doesn't use S-RAM, do you want to force loading it?", "Load S-RAM",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.No)
+                        return;
+                }
+                OpenFileDialog op = new OpenFileDialog();
+                op.Filter = "S-RAM (*.sav)|*.sav";
+                if (op.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
+                {
+                    Stream str = new FileStream(op.FileName, FileMode.Open, FileAccess.Read);
+                    str.Read(NES.CpuMemory.srm, 0, 0x2000);
+                    str.Close();
+                }
+                NES.PAUSE = false;
+            }
+        }
     }
 }
