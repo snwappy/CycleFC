@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="Video\Frm_D3DOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Windows\audioOptionsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Windows\controlSettingsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Windows\Frm_About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Windows\generalOptionsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Windows\keysetupWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Windows\mainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Windows\paletteWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Windows\pathWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Windows\profileNameWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Windows\romInfoWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

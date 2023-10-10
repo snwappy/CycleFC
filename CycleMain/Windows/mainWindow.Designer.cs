@@ -173,7 +173,7 @@ namespace CycleMain
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(487, 359);
+            this.panel1.Size = new System.Drawing.Size(487, 337);
             this.panel1.TabIndex = 3;
             this.panel1.Resize += new System.EventHandler(this.panel1_Resize);
             // 
@@ -182,7 +182,7 @@ namespace CycleMain
             this.panel_surface.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_surface.Location = new System.Drawing.Point(0, 0);
             this.panel_surface.Name = "panel_surface";
-            this.panel_surface.Size = new System.Drawing.Size(487, 359);
+            this.panel_surface.Size = new System.Drawing.Size(487, 337);
             this.panel_surface.TabIndex = 0;
             this.panel_surface.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_surface_Paint);
             // 
@@ -220,26 +220,26 @@ namespace CycleMain
             // openROMToolStripMenuItem
             // 
             this.openROMToolStripMenuItem.Name = "openROMToolStripMenuItem";
-            this.openROMToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.openROMToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.openROMToolStripMenuItem.Text = "&Open ROM";
             this.openROMToolStripMenuItem.Click += new System.EventHandler(this.openROMToolStripMenuItem_Click);
             // 
             // closeROMToolStripMenuItem
             // 
             this.closeROMToolStripMenuItem.Name = "closeROMToolStripMenuItem";
-            this.closeROMToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.closeROMToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.closeROMToolStripMenuItem.Text = "&Close ROM";
             this.closeROMToolStripMenuItem.Click += new System.EventHandler(this.closeROMToolStripMenuItem_Click);
             // 
             // toolStripSeparator11
             // 
             this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(130, 6);
+            this.toolStripSeparator11.Size = new System.Drawing.Size(177, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "&Exit";
             // 
             // systemToolStripMenuItem
@@ -313,26 +313,26 @@ namespace CycleMain
             // autoToolStripMenuItem1
             // 
             this.autoToolStripMenuItem1.Name = "autoToolStripMenuItem1";
-            this.autoToolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
+            this.autoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.autoToolStripMenuItem1.Text = "Auto";
             this.autoToolStripMenuItem1.Click += new System.EventHandler(this.autoToolStripMenuItem1_Click);
             // 
             // toolStripSeparator26
             // 
             this.toolStripSeparator26.Name = "toolStripSeparator26";
-            this.toolStripSeparator26.Size = new System.Drawing.Size(169, 6);
+            this.toolStripSeparator26.Size = new System.Drawing.Size(177, 6);
             // 
             // nTSCUSAJapanToolStripMenuItem
             // 
             this.nTSCUSAJapanToolStripMenuItem.Name = "nTSCUSAJapanToolStripMenuItem";
-            this.nTSCUSAJapanToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.nTSCUSAJapanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nTSCUSAJapanToolStripMenuItem.Text = "NTSC (USA, Japan)";
             this.nTSCUSAJapanToolStripMenuItem.Click += new System.EventHandler(this.nTSCUSAJapanToolStripMenuItem_Click);
             // 
             // pALEuropeToolStripMenuItem
             // 
             this.pALEuropeToolStripMenuItem.Name = "pALEuropeToolStripMenuItem";
-            this.pALEuropeToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.pALEuropeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pALEuropeToolStripMenuItem.Text = "PAL (Europe)";
             this.pALEuropeToolStripMenuItem.Click += new System.EventHandler(this.pALEuropeToolStripMenuItem_Click);
             // 
