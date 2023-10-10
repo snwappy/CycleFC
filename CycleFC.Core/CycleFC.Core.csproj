@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3DE8A70B-0B88-407F-81BF-4B16001D059C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyNes.Nes</RootNamespace>
+    <AssemblyName>Nes</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'x86|x86'">
+    <OutputPath>bin\x86\x86\</OutputPath>
+    <Optimize>true</Optimize>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'x64|x86'">
+    <OutputPath>bin\x86\x64\</OutputPath>
+    <Optimize>true</Optimize>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'x86|x64'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x64\x86\</OutputPath>
+    <Optimize>true</Optimize>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'x64|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\x64\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SevenZip, Version=19.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SevenZip.19.0.0\lib\net20\SevenZip.dll</HintPath>
+    </Reference>
+    <Reference Include="SlimDX, Version=4.0.13.43, Culture=neutral, PublicKeyToken=b1b0c32fd1ffe4f9, processorArchitecture=x86">
+      <HintPath>..\packages\SlimDX.4.0.13.44\lib\NET40\SlimDX.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="APU\ChannelDpm.cs" />
+    <Compile Include="APU\ChannelNoi.cs" />
+    <Compile Include="APU\ChannelSqr.cs" />
+    <Compile Include="APU\ChannelTri.cs" />
+    <Compile Include="APU\MMC5\ChannelMmc5Pcm.cs" />
+    <Compile Include="APU\MMC5\ChannelMmc5Sqr.cs" />
+    <Compile Include="APU\MMC5\Mmc5ExternalComponent.cs" />
+    <Compile Include="APU\NesApu.cs" />
+    <Compile Include="APU\NesApuChannel.cs" />
+    <Compile Include="APU\NesApuDuration.cs" />
+    <Compile Include="APU\NesApuEnvelope.cs" />
+    <Compile Include="APU\NesApuExternalComponent.cs" />
+    <Compile Include="APU\NesApuMixer.cs" />
+    <Compile Include="APU\SS5B\ChannelSS5BVol.cs" />
+    <Compile Include="APU\SS5B\Ss5BExternalComponent.cs" />
+    <Compile Include="APU\VRC6\ChannelVrc6Saw.cs" />
+    <Compile Include="APU\VRC6\ChannelVrc6Sqr.cs" />
+    <Compile Include="APU\VRC6\Vrc6ExternalComponent.cs" />
+    <Compile Include="Component.cs" />
+    <Compile Include="CPU\NesCpu.cs" />
+    <Compile Include="Database\NesDatabase.cs" />
+    <Compile Include="Database\NesDatabaseRomInfo.cs" />
+    <Compile Include="Debuggers\CONSOLE.cs" />
+    <Compile Include="Delegates.cs" />
+    <Compile Include="Input\IInputManager.cs" />
+    <Compile Include="Input\IJoypad.cs" />
+    <Compile Include="Input\ITimer.cs" />
+    <Compile Include="Mappers\Mapper.cs" />
+    <Compile Include="Mappers\Mapper000.cs" />
+    <Compile Include="Mappers\Mapper001.cs" />
+    <Compile Include="Mappers\Mapper002.cs" />
+    <Compile Include="Mappers\Mapper003.cs" />
+    <Compile Include="Mappers\Mapper004.cs" />
+    <Compile Include="Mappers\Mapper005.cs" />
+    <Compile Include="Mappers\Mapper006.cs" />
+    <Compile Include="Mappers\Mapper007.cs" />
+    <Compile Include="Mappers\Mapper008.cs" />
+    <Compile Include="Mappers\Mapper009.cs" />
+    <Compile Include="Mappers\Mapper010.cs" />
+    <Compile Include="Mappers\Mapper011.cs" />
+    <Compile Include="Mappers\Mapper013.cs" />
+    <Compile Include="Mappers\Mapper015.cs" />
+    <Compile Include="Mappers\Mapper016.cs" />
+    <Compile Include="Mappers\Mapper017.cs" />
+    <Compile Include="Mappers\Mapper018.cs" />
+    <Compile Include="Mappers\Mapper022.cs" />
+    <Compile Include="Mappers\Mapper023.cs" />
+    <Compile Include="Mappers\Mapper024.cs" />
+    <Compile Include="Mappers\Mapper025.cs" />
+    <Compile Include="Mappers\Mapper026.cs" />
+    <Compile Include="Mappers\Mapper032.cs" />
+    <Compile Include="Mappers\Mapper033.cs" />
+    <Compile Include="Mappers\Mapper034.cs" />
+    <Compile Include="Mappers\Mapper041.cs" />
+    <Compile Include="Mappers\Mapper043.cs" />
+    <Compile Include="Mappers\Mapper044.cs" />
+    <Compile Include="Mappers\Mapper046.cs" />
+    <Compile Include="Mappers\Mapper047.cs" />
+    <Compile Include="Mappers\Mapper048.cs" />
+    <Compile Include="Mappers\Mapper049.cs" />
+    <Compile Include="Mappers\Mapper051.cs" />
+    <Compile Include="Mappers\Mapper057.cs" />
+    <Compile Include="Mappers\Mapper058.cs" />
+    <Compile Include="Mappers\Mapper060.cs" />
+    <Compile Include="Mappers\Mapper061.cs" />
+    <Compile Include="Mappers\Mapper062.cs" />
+    <Compile Include="Mappers\Mapper064.cs" />
+    <Compile Include="Mappers\Mapper065.cs" />
+    <Compile Include="Mappers\Mapper066.cs" />
+    <Compile Include="Mappers\Mapper067.cs" />
+    <Compile Include="Mappers\Mapper068.cs" />
+    <Compile Include="Mappers\Mapper069.cs" />
+    <Compile Include="Mappers\Mapper070.cs" />
+    <Compile Include="Mappers\Mapper071.cs" />
+    <Compile Include="Mappers\Mapper072.cs" />
+    <Compile Include="Mappers\Mapper073.cs" />
+    <Compile Include="Mappers\Mapper074.cs" />
+    <Compile Include="Mappers\Mapper075.cs" />
+    <Compile Include="Mappers\Mapper076.cs" />
+    <Compile Include="Mappers\Mapper077.cs" />
+    <Compile Include="Mappers\Mapper078.cs" />
+    <Compile Include="Mappers\Mapper079.cs" />
+    <Compile Include="Mappers\Mapper080.cs" />
+    <Compile Include="Mappers\Mapper082.cs" />
+    <Compile Include="Mappers\Mapper083.cs" />
+    <Compile Include="Mappers\Mapper085.cs" />
+    <Compile Include="Mappers\Mapper086.cs" />
+    <Compile Include="Mappers\Mapper087.cs" />
+    <Compile Include="Mappers\Mapper088.cs" />
+    <Compile Include="Mappers\Mapper089.cs" />
+    <Compile Include="Mappers\Mapper090.cs" />
+    <Compile Include="Mappers\Mapper091.cs" />
+    <Compile Include="Mappers\Mapper092.cs" />
+    <Compile Include="Mappers\Mapper093.cs" />
+    <Compile Include="Mappers\Mapper094.cs" />
+    <Compile Include="Mappers\Mapper095.cs" />
+    <Compile Include="Mappers\Mapper097.cs" />
+    <Compile Include="Mappers\Mapper105.cs" />
+    <Compile Include="Mappers\Mapper112.cs" />
+    <Compile Include="Mappers\Mapper113.cs" />
+    <Compile Include="Mappers\Mapper114.cs" />
+    <Compile Include="Mappers\Mapper115.cs" />
+    <Compile Include="Mappers\Mapper117.cs" />
+    <Compile Include="Mappers\Mapper118.cs" />
+    <Compile Include="Mappers\Mapper012.cs" />
+    <Compile Include="Mappers\Mapper119.cs" />
+    <Compile Include="Mappers\Mapper133.cs" />
+    <Compile Include="Mappers\Mapper140.cs" />
+    <Compile Include="Mappers\Mapper142.cs" />
+    <Compile Include="Mappers\Mapper159.cs" />
+    <Compile Include="Mappers\Mapper180.cs" />
+    <Compile Include="Mappers\Mapper182.cs" />
+    <Compile Include="Mappers\Mapper184.cs" />
+    <Compile Include="Mappers\Mapper185.cs" />
+    <Compile Include="Mappers\Mapper187.cs" />
+    <Compile Include="Mappers\Mapper188.cs" />
+    <Compile Include="Mappers\Mapper189.cs" />
+    <Compile Include="Mappers\Mapper019.cs" />
+    <Compile Include="Mappers\Mapper193.cs" />
+    <Compile Include="Mappers\Mapper200.cs" />
+    <Compile Include="Mappers\Mapper201.cs" />
+    <Compile Include="Mappers\Mapper202.cs" />
+    <Compile Include="Mappers\Mapper203.cs" />
+    <Compile Include="Mappers\Mapper204.cs" />
+    <Compile Include="Mappers\Mapper205.cs" />
+    <Compile Include="Mappers\Mapper021.cs" />
+    <Compile Include="Mappers\Mapper212.cs" />
+    <Compile Include="Mappers\Mapper213.cs" />
+    <Compile Include="Mappers\Mapper225.cs" />
+    <Compile Include="Mappers\Mapper226.cs" />
+    <Compile Include="Mappers\Mapper228.cs" />
+    <Compile Include="Mappers\Mapper229.cs" />
+    <Compile Include="Mappers\Mapper230.cs" />
+    <Compile Include="Mappers\Mapper231.cs" />
+    <Compile Include="Mappers\Mapper232.cs" />
+    <Compile Include="Mappers\Mapper233.cs" />
+    <Compile Include="Mappers\Mapper240.cs" />
+    <Compile Include="Mappers\Mapper241.cs" />
+    <Compile Include="Mappers\Mapper242.cs" />
+    <Compile Include="Mappers\Mapper243.cs" />
+    <Compile Include="Mappers\Mapper244.cs" />
+    <Compile Include="Mappers\Mapper245.cs" />
+    <Compile Include="Mappers\Mapper246.cs" />
+    <Compile Include="Mappers\Mapper248.cs" />
+    <Compile Include="Mappers\Mapper249.cs" />
+    <Compile Include="Mappers\Mapper251.cs" />
+    <Compile Include="Mappers\Mapper042.cs" />
+    <Compile Include="Mappers\Mapper045.cs" />
+    <Compile Include="Mappers\Mapper050.cs" />
+    <Compile Include="Mappers\Mapper255.cs" />
+    <Compile Include="Mappers\MapperManager.cs" />
+    <Compile Include="Memory\NesCartridge.cs" />
+    <Compile Include="Memory\NesCpuMemory.cs" />
+    <Compile Include="Memory\NesMemory.cs" />
+    <Compile Include="Memory\NesPpuMemory.cs" />
+    <Compile Include="NesSystem.cs" />
+    <Compile Include="Others\StateStream.cs" />
+    <Compile Include="Output\IAudioDevice.cs" />
+    <Compile Include="Output\IWaveRecorder.cs" />
+    <Compile Include="Output\IVideoDevice.cs" />
+    <Compile Include="PPU\NTSCPaletteGenerator.cs" />
+    <Compile Include="PPU\NesPpu.cs" />
+    <Compile Include="PPU\NesPpuObj.cs" />
+    <Compile Include="PPU\PaletteFormat.cs" />
+    <Compile Include="PPU\Paletter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
