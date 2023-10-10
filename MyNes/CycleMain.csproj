@@ -47,7 +47,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>MyNes.Program</StartupObject>
+    <StartupObject>CycleMain.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Resources\MyNesIcon.ico</ApplicationIcon>
@@ -124,12 +124,6 @@
     <Compile Include="Forms\Frm_AudioOptions.Designer.cs">
       <DependentUpon>Frm_AudioOptions.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Frm_Browser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Frm_Browser.designer.cs">
-      <DependentUpon>Frm_Browser.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Frm_Console.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,11 +172,11 @@
     <Compile Include="Forms\Frm_PathsOptions.Designer.cs">
       <DependentUpon>Frm_PathsOptions.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Frm_RomInfo.cs">
+    <Compile Include="Forms\romInfoWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Frm_RomInfo.Designer.cs">
-      <DependentUpon>Frm_RomInfo.cs</DependentUpon>
+    <Compile Include="Forms\romInfoWindow.Designer.cs">
+      <DependentUpon>romInfoWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Nes Audio Mode\AudioDSD.cs" />
     <Compile Include="Nes Audio Mode\WaveRecorder.cs" />
@@ -213,9 +207,6 @@
     <EmbeddedResource Include="Forms\Frm_AudioOptions.resx">
       <DependentUpon>Frm_AudioOptions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Frm_Browser.resx">
-      <DependentUpon>Frm_Browser.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Console.resx">
       <DependentUpon>Frm_Console.cs</DependentUpon>
     </EmbeddedResource>
@@ -240,8 +231,8 @@
     <EmbeddedResource Include="Forms\Frm_PathsOptions.resx">
       <DependentUpon>Frm_PathsOptions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Frm_RomInfo.resx">
-      <DependentUpon>Frm_RomInfo.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\romInfoWindow.resx">
+      <DependentUpon>romInfoWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nes Video Mode\Frm_D3DOptions.resx">
       <DependentUpon>Frm_D3DOptions.cs</DependentUpon>
@@ -336,6 +327,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\full_palette_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Banner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

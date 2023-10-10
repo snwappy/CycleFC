@@ -11,13 +11,11 @@ namespace CycleMain
 {
     public partial class mainWindow : Form
     {
-        //SevenZip.SevenZipExtractor EXTRACTOR;
         Thread mainThread;
         public NesSystem NES;
         IVideoDevice VideoDevice;
         int SlotIndex = 0;
         int statusTime = 0;
-        Frm_Browser br;
         Frm_Console Debugger;
 
         public mainWindow(string[] Args)
@@ -64,12 +62,6 @@ namespace CycleMain
             RefreshRecents();
             SetVolumeLabel();
 
-            if (Program.Settings.ShowBrowser)
-            {
-                br = new Frm_Browser(this);
-                br.FormClosed += new FormClosedEventHandler(br_FormClosed);
-                br.Show();
-            }
             if (Program.Settings.RunConsole)
             {
                 Debugger = new Frm_Console();
@@ -82,10 +74,7 @@ namespace CycleMain
         {
             Debugger.SaveSettings();
         }
-        void br_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            br.SaveSettings();
-        }
+
         void SaveSettings()
         {
             Program.Settings.Win_size = this.Size;
@@ -94,28 +83,14 @@ namespace CycleMain
         }
         public void OpenRom(string FileName, bool AutoStart)
         {
-            #region Check if archive
-            if (Path.GetExtension(FileName).ToLower() != ".nes")
-            {
-                try
-                {
-                    //EXTRACTOR = new SevenZip.SevenZipExtractor(FileName);
-                }
-                catch
-                {
-                    MessageBox.Show("Could not initialize 7Z library, My Nes can't open archive files without it !!");
-                    return;
-                }
-            }
-            #endregion
             // check out the opened rom
             NesCartridge cart = new NesCartridge(null);
             LoadRomStatus status = cart.Load(FileName, new FileStream(FileName, FileMode.Open, FileAccess.Read), null, true);
             switch (status)
             {
-                case LoadRomStatus.LoadFailure: MessageBox.Show("Unable to load this rom, not INES format or damaged header"); return;
-                case LoadRomStatus.InvalidHeader: MessageBox.Show("Unable to load this rom, not INES format"); return;
-                case LoadRomStatus.InvalidMapper: MessageBox.Show("Unable to load this rom, unsupported mapper # " + cart.Mapper); return;
+                case LoadRomStatus.LoadFailure: MessageBox.Show("Unable to load this ROM image, not iNES format or damaged header", "Information", MessageBoxButtons.OK, MessageBoxIcon.Stop); return;
+                case LoadRomStatus.InvalidHeader: MessageBox.Show("Unable to load this ROM image, not iNES format", "Information", MessageBoxButtons.OK, MessageBoxIcon.Stop); return;
+                case LoadRomStatus.InvalidMapper: MessageBox.Show("Unable to load this ROM image, unsupported mapper # " + cart.Mapper, "Information", MessageBoxButtons.OK, MessageBoxIcon.Stop); return;
             }
             // turn off the old nes
             if (mainThread != null)
@@ -157,10 +132,10 @@ namespace CycleMain
                 string name = NES.Cartridge.DataBaseInfo.Game_Name;
                 if (NES.Cartridge.DataBaseInfo.Game_AltName != null)
                     name += " (" + NES.Cartridge.DataBaseInfo.Game_AltName + ")";
-                this.Text = name + " - My Nes";
+                this.Text = name + " | CycleFC";
             }
             else
-                this.Text = Path.GetFileNameWithoutExtension(FileName) + " - My Nes";
+                this.Text = Path.GetFileNameWithoutExtension(FileName) + " | CycleFC";
         }
 
         void SetupScreenPosition()
@@ -956,7 +931,7 @@ namespace CycleMain
             if (NES != null)
             {
                 NES.PAUSE = true;
-                Frm_RomInfo rr = new Frm_RomInfo(NES.Cartridge.FilePath);
+                romInfoWindow rr = new romInfoWindow(NES.Cartridge.FilePath);
                 rr.ShowDialog(this);
                 NES.PAUSE = false;
             }
@@ -994,14 +969,7 @@ namespace CycleMain
         //show browser
         private void toolStripButton1_Click_1(object sender, EventArgs e)
         {
-            if (NES != null)
-                NES.PAUSE = true;
-            if (br != null)
-                br.Close();
 
-            br = new Frm_Browser(this);
-            br.FormClosed += new FormClosedEventHandler(br_FormClosed);
-            br.Show();
         }
         private void consoleToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -1126,7 +1094,60 @@ namespace CycleMain
 
         private void Frm_main_Load(object sender, EventArgs e)
         {
+            RestoreTitleString();
+        }
 
+        private void openROMToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (NES != null)
+                NES.PAUSE = true;
+            OpenFileDialog op = new OpenFileDialog();
+            op.Title = "Open NES / Famicom ROM images";
+            op.Filter = "NES / Famicom ROM Files (*.nes)|*.nes;*.NES";
+            if (op.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
+            {
+                OpenRom(op.FileName, true);
+            }
+            if (NES != null)
+                NES.PAUSE = false;
+        }
+
+        private void softResetToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (NES != null)
+            {
+                NES.Cpu.SoftReset();
+            }
+        }
+
+        private void hardResetToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (NES != null)
+            {
+                OpenRom(NES.Cartridge.FilePath, true);
+            }
+        }
+
+        private void closeROMToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (mainThread != null)
+                mainThread.Abort();
+            if (this.NES != null)
+                this.NES.ShutDown();
+            NES = null;
+            RestoreTitleString();
+            panel1.Refresh();
+        }
+
+        private void RestoreTitleString()
+        {
+            this.Text = "CycleFC";
+        }
+
+        private void pauseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (NES != null)
+                NES.PAUSE = !NES.PAUSE;
         }
     }
 }

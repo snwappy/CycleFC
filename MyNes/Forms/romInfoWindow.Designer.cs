@@ -16,7 +16,7 @@
 \*********************************************************************/
 namespace CycleMain
 {
-    partial class Frm_RomInfo
+    partial class romInfoWindow
     {
         /// <summary>
         /// Required designer variable.

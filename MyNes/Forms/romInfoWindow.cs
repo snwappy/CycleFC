@@ -29,9 +29,9 @@ using System.Reflection;
 
 namespace CycleMain
 {
-    public partial class Frm_RomInfo : Form
+    public partial class romInfoWindow : Form
     {
-        public Frm_RomInfo(string RomPath)
+        public romInfoWindow(string RomPath)
         {
             InitializeComponent();
             if (Program.Form_Main.NES != null)
