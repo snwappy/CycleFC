@@ -387,5 +387,10 @@ namespace CycleMain
                 comboBox1.SelectedIndex = SelectedIndex;
             }
         }
+
+        private void controlSettingsWindow_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

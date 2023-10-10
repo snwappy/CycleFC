@@ -5,13 +5,13 @@
     <Compile Update="Video\Frm_D3DOptions.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Windows\AboutDIag.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Windows\audioOptionsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Windows\controlSettingsWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Windows\Frm_About.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Windows\generalOptionsWindow.cs">

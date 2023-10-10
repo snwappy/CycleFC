@@ -44,133 +44,140 @@ namespace CycleMain
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.SuspendLayout();
+            groupBox1 = new System.Windows.Forms.GroupBox();
+            label1 = new System.Windows.Forms.Label();
+            comboBox1 = new System.Windows.Forms.ComboBox();
+            button1 = new System.Windows.Forms.Button();
+            button2 = new System.Windows.Forms.Button();
+            groupBox2 = new System.Windows.Forms.GroupBox();
+            checkBox2 = new System.Windows.Forms.CheckBox();
+            checkBox1 = new System.Windows.Forms.CheckBox();
+            label2 = new System.Windows.Forms.Label();
+            groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
+            SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(278, 51);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Fullscreen";
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(comboBox1);
+            groupBox1.Location = new System.Drawing.Point(14, 14);
+            groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            groupBox1.Size = new System.Drawing.Size(324, 59);
+            groupBox1.TabIndex = 0;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Fullscreen";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Resolution :";
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(7, 25);
+            label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(69, 15);
+            label1.TabIndex = 1;
+            label1.Text = "Resolution :";
             // 
             // comboBox1
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "<Auto detect>",
-            "320 x 240",
-            "640 x 480",
-            "800 x 600"});
-            this.comboBox1.Location = new System.Drawing.Point(76, 19);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(196, 21);
-            this.comboBox1.TabIndex = 0;
+            comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "<Auto detect>", "320 x 240", "640 x 480", "800 x 600" });
+            comboBox1.Location = new System.Drawing.Point(89, 22);
+            comboBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new System.Drawing.Size(228, 23);
+            comboBox1.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(215, 190);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "&Save";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            button1.Location = new System.Drawing.Point(251, 219);
+            button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            button1.Name = "button1";
+            button1.Size = new System.Drawing.Size(88, 27);
+            button1.TabIndex = 1;
+            button1.Text = "&Save";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(134, 190);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "&Cancel";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            button2.Location = new System.Drawing.Point(156, 219);
+            button2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            button2.Name = "button2";
+            button2.Size = new System.Drawing.Size(88, 27);
+            button2.TabIndex = 2;
+            button2.Text = "&Cancel";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.checkBox2);
-            this.groupBox2.Controls.Add(this.checkBox1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 69);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(278, 104);
-            this.groupBox2.TabIndex = 3;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Rendering";
+            groupBox2.Controls.Add(checkBox2);
+            groupBox2.Controls.Add(checkBox1);
+            groupBox2.Location = new System.Drawing.Point(14, 80);
+            groupBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            groupBox2.Size = new System.Drawing.Size(324, 120);
+            groupBox2.TabIndex = 3;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Rendering";
             // 
             // checkBox2
             // 
-            this.checkBox2.Location = new System.Drawing.Point(6, 57);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(264, 32);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "In NTSC tv system, hide the upper 8  and the lower 8 scanlines.";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            checkBox2.Location = new System.Drawing.Point(7, 66);
+            checkBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new System.Drawing.Size(308, 37);
+            checkBox2.TabIndex = 1;
+            checkBox2.Text = "In NTSC TV system, hide the upper 8  and the lower 8 scanlines.";
+            checkBox2.UseVisualStyleBackColor = true;
             // 
             // checkBox1
             // 
-            this.checkBox1.Location = new System.Drawing.Point(6, 19);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(264, 32);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Vertical sync, wait to render the full image for fullscreen and windowed mode.";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.Location = new System.Drawing.Point(7, 22);
+            checkBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new System.Drawing.Size(308, 37);
+            checkBox1.TabIndex = 0;
+            checkBox1.Text = "Vertical sync, wait to render the full image for fullscreen and windowed mode.";
+            checkBox1.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(12, 185);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 31);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Hard Reset game to settings take effect.";
+            label2.Location = new System.Drawing.Point(14, 213);
+            label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(133, 36);
+            label2.TabIndex = 4;
+            label2.Text = "Hard Reset game to settings take effect.";
             // 
             // Frm_D3DOptions
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightSlateGray;
-            this.ClientSize = new System.Drawing.Size(302, 225);
-            this.ControlBox = false;
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Frm_D3DOptions";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "D3D Options";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.SystemColors.Control;
+            ClientSize = new System.Drawing.Size(348, 255);
+            ControlBox = false;
+            Controls.Add(label2);
+            Controls.Add(groupBox2);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(groupBox1);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Name = "Frm_D3DOptions";
+            ShowIcon = false;
+            ShowInTaskbar = false;
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "Direct3D Renderer Options";
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion

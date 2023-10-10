@@ -44,171 +44,186 @@ namespace CycleMain
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.checkBox1_sramsave = new System.Windows.Forms.CheckBox();
-            this.checkBox1_pause = new System.Windows.Forms.CheckBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.SuspendLayout();
+            groupBox1 = new System.Windows.Forms.GroupBox();
+            radioButton5 = new System.Windows.Forms.RadioButton();
+            radioButton4 = new System.Windows.Forms.RadioButton();
+            radioButton3 = new System.Windows.Forms.RadioButton();
+            radioButton2 = new System.Windows.Forms.RadioButton();
+            radioButton1 = new System.Windows.Forms.RadioButton();
+            button1 = new System.Windows.Forms.Button();
+            button2 = new System.Windows.Forms.Button();
+            button3 = new System.Windows.Forms.Button();
+            checkBox1_sramsave = new System.Windows.Forms.CheckBox();
+            checkBox1_pause = new System.Windows.Forms.CheckBox();
+            groupBox2 = new System.Windows.Forms.GroupBox();
+            groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
+            SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton5);
-            this.groupBox1.Controls.Add(this.radioButton4);
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(248, 49);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Image format for screenshots";
+            groupBox1.Controls.Add(radioButton5);
+            groupBox1.Controls.Add(radioButton4);
+            groupBox1.Controls.Add(radioButton3);
+            groupBox1.Controls.Add(radioButton2);
+            groupBox1.Controls.Add(radioButton1);
+            groupBox1.Location = new System.Drawing.Point(14, 14);
+            groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            groupBox1.Size = new System.Drawing.Size(289, 57);
+            groupBox1.TabIndex = 0;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Image format for screenshots";
             // 
             // radioButton5
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(195, 19);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(47, 17);
-            this.radioButton5.TabIndex = 10;
-            this.radioButton5.Text = "TIFF";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            radioButton5.AutoSize = true;
+            radioButton5.Location = new System.Drawing.Point(227, 22);
+            radioButton5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            radioButton5.Name = "radioButton5";
+            radioButton5.Size = new System.Drawing.Size(46, 19);
+            radioButton5.TabIndex = 10;
+            radioButton5.Text = "TIFF";
+            radioButton5.UseVisualStyleBackColor = true;
             // 
             // radioButton4
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(146, 19);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(48, 17);
-            this.radioButton4.TabIndex = 9;
-            this.radioButton4.Text = "PNG";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            radioButton4.AutoSize = true;
+            radioButton4.Location = new System.Drawing.Point(170, 22);
+            radioButton4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            radioButton4.Name = "radioButton4";
+            radioButton4.Size = new System.Drawing.Size(49, 19);
+            radioButton4.TabIndex = 9;
+            radioButton4.Text = "PNG";
+            radioButton4.UseVisualStyleBackColor = true;
             // 
             // radioButton3
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(103, 19);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(42, 17);
-            this.radioButton3.TabIndex = 8;
-            this.radioButton3.Text = "GIF";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            radioButton3.AutoSize = true;
+            radioButton3.Location = new System.Drawing.Point(120, 22);
+            radioButton3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            radioButton3.Name = "radioButton3";
+            radioButton3.Size = new System.Drawing.Size(42, 19);
+            radioButton3.TabIndex = 8;
+            radioButton3.Text = "GIF";
+            radioButton3.UseVisualStyleBackColor = true;
             // 
             // radioButton2
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(57, 19);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(45, 17);
-            this.radioButton2.TabIndex = 7;
-            this.radioButton2.Text = "JPG";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            radioButton2.AutoSize = true;
+            radioButton2.Location = new System.Drawing.Point(66, 22);
+            radioButton2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            radioButton2.Name = "radioButton2";
+            radioButton2.Size = new System.Drawing.Size(44, 19);
+            radioButton2.TabIndex = 7;
+            radioButton2.Text = "JPG";
+            radioButton2.UseVisualStyleBackColor = true;
             // 
             // radioButton1
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(6, 19);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(48, 17);
-            this.radioButton1.TabIndex = 6;
-            this.radioButton1.Text = "BMP";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            radioButton1.AutoSize = true;
+            radioButton1.Location = new System.Drawing.Point(7, 22);
+            radioButton1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new System.Drawing.Size(50, 19);
+            radioButton1.TabIndex = 6;
+            radioButton1.Text = "BMP";
+            radioButton1.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 150);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "&Ok";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            button1.Location = new System.Drawing.Point(14, 173);
+            button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            button1.Name = "button1";
+            button1.Size = new System.Drawing.Size(88, 27);
+            button1.TabIndex = 1;
+            button1.Text = "&OK";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(91, 150);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "&Cancel";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            button2.Location = new System.Drawing.Point(106, 173);
+            button2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            button2.Name = "button2";
+            button2.Size = new System.Drawing.Size(88, 27);
+            button2.TabIndex = 2;
+            button2.Text = "&Cancel";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(185, 150);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "&Defaults";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            button3.Location = new System.Drawing.Point(216, 173);
+            button3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            button3.Name = "button3";
+            button3.Size = new System.Drawing.Size(88, 27);
+            button3.TabIndex = 3;
+            button3.Text = "&Defaults";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // checkBox1_sramsave
             // 
-            this.checkBox1_sramsave.AutoSize = true;
-            this.checkBox1_sramsave.Location = new System.Drawing.Point(6, 19);
-            this.checkBox1_sramsave.Name = "checkBox1_sramsave";
-            this.checkBox1_sramsave.Size = new System.Drawing.Size(111, 17);
-            this.checkBox1_sramsave.TabIndex = 4;
-            this.checkBox1_sramsave.Text = "Auto save S-RAM";
-            this.checkBox1_sramsave.UseVisualStyleBackColor = true;
+            checkBox1_sramsave.AutoSize = true;
+            checkBox1_sramsave.Location = new System.Drawing.Point(7, 22);
+            checkBox1_sramsave.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            checkBox1_sramsave.Name = "checkBox1_sramsave";
+            checkBox1_sramsave.Size = new System.Drawing.Size(118, 19);
+            checkBox1_sramsave.TabIndex = 4;
+            checkBox1_sramsave.Text = "Auto save S-RAM";
+            checkBox1_sramsave.UseVisualStyleBackColor = true;
             // 
             // checkBox1_pause
             // 
-            this.checkBox1_pause.AutoSize = true;
-            this.checkBox1_pause.Location = new System.Drawing.Point(6, 42);
-            this.checkBox1_pause.Name = "checkBox1_pause";
-            this.checkBox1_pause.Size = new System.Drawing.Size(196, 17);
-            this.checkBox1_pause.TabIndex = 5;
-            this.checkBox1_pause.Text = "Pause when the window lose focus.";
-            this.checkBox1_pause.UseVisualStyleBackColor = true;
+            checkBox1_pause.AutoSize = true;
+            checkBox1_pause.Location = new System.Drawing.Point(7, 48);
+            checkBox1_pause.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            checkBox1_pause.Name = "checkBox1_pause";
+            checkBox1_pause.Size = new System.Drawing.Size(213, 19);
+            checkBox1_pause.TabIndex = 5;
+            checkBox1_pause.Text = "Pause when the window lose focus.";
+            checkBox1_pause.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.checkBox1_sramsave);
-            this.groupBox2.Controls.Add(this.checkBox1_pause);
-            this.groupBox2.Location = new System.Drawing.Point(12, 67);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(248, 75);
-            this.groupBox2.TabIndex = 6;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Misc";
+            groupBox2.Controls.Add(checkBox1_sramsave);
+            groupBox2.Controls.Add(checkBox1_pause);
+            groupBox2.Location = new System.Drawing.Point(14, 77);
+            groupBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            groupBox2.Size = new System.Drawing.Size(289, 87);
+            groupBox2.TabIndex = 6;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Misc";
             // 
-            // Frm_GeneralOptions
+            // generalOptionsWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(272, 192);
-            this.ControlBox = false;
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Frm_GeneralOptions";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "General Options";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.SystemColors.Control;
+            ClientSize = new System.Drawing.Size(309, 216);
+            ControlBox = false;
+            Controls.Add(groupBox2);
+            Controls.Add(button3);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(groupBox1);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Name = "generalOptionsWindow";
+            ShowIcon = false;
+            ShowInTaskbar = false;
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "General Options";
+            Load += generalOptionsWindow_Load;
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion

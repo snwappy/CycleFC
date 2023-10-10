@@ -4,8 +4,11 @@ using System.Drawing;
 using System.IO;
 using System.Threading;
 using System.Windows.Forms;
+using System.Drawing.Imaging;
 using CycleCore.Nes;
 using CycleCore.Nes.Output.Video;
+using System.Reflection;
+using MyNes.Windows;
 
 namespace CycleMain
 {
@@ -16,6 +19,13 @@ namespace CycleMain
         IVideoDevice VideoDevice;
         int SlotIndex = 0;
         int statusTime = 0;
+        private int phase = 0;
+        private Bitmap gradientBitmap = null;
+        private float angle = 0;
+        private int redPhase = 25;
+        private int greenPhase = 85;
+        private int bluePhase = 170;
+        private int backgroundPhase = 0;
 
         public mainWindow(string[] Args)
         {
@@ -72,8 +82,6 @@ namespace CycleMain
                 case LoadRomStatus.InvalidMapper: MessageBox.Show("Unable to load this ROM image, unsupported mapper # " + cart.Mapper, "Information", MessageBoxButtons.OK, MessageBoxIcon.Stop); return;
             }
             // turn off the old nes
-            if (mainThread != null)
-                mainThread.Abort();
             if (this.NES != null)
                 this.NES.ShutDown();
 
@@ -105,15 +113,14 @@ namespace CycleMain
             }
             AddRecent(FileName);
             RefreshStateFiles();
-            if (NES.Cartridge.DataBaseInfo.Game_Name != null)
-            {
-                string name = NES.Cartridge.DataBaseInfo.Game_Name;
-                if (NES.Cartridge.DataBaseInfo.Game_AltName != null)
-                    name += " (" + NES.Cartridge.DataBaseInfo.Game_AltName + ")";
-                this.Text = name + " | CycleFC";
-            }
-            else
-                this.Text = Path.GetFileNameWithoutExtension(FileName) + " | CycleFC";
+
+            uint crc32 = CalculateCRC32(FileName);
+            string convertString = crc32.ToString("X8");
+
+            string targetCRC = convertString;
+            string gameName = romDB.FindGameNameByCRC(targetCRC);
+
+            Text = gameName + " | CycleFC";
         }
 
         void SetupScreenPosition()
@@ -305,7 +312,6 @@ namespace CycleMain
         }
         void SetStatus(string status, int time)
         {
-            StatusLabel.Text = status;
             statusTime = time;
         }
         void TakeSnapshot()
@@ -333,7 +339,7 @@ namespace CycleMain
                 i++;
             }
             NES.PAUSE = false;
-            SetStatus("Snapshot taken", 3);
+            StatusData("Screenshot Taken");
         }
         void SaveState()
         {
@@ -474,7 +480,7 @@ namespace CycleMain
         {
             if (NES != null)
             {
-                toolStripStatusLabel1.Text = "FPS: " + this.NES.FPS;
+                //toolStripStatusLabel1.Text = "FPS: " + this.NES.FPS;
                 if (NES.Apu.Output != null)
                     if (NES.Apu.Output.Recorder.IsRecording)
                         SetStatus("Recording sound [" + TimeSpan.FromSeconds(NES.Apu.Output.Recorder.Time) + "]", 2);
@@ -483,7 +489,9 @@ namespace CycleMain
             if (statusTime > 0)
                 statusTime--;
             else
-            { StatusLabel.Text = ""; statusTime = -1; }
+            {
+                //StatusLabel.Text = ""; statusTime = -1; 
+            }
 
         }
 
@@ -769,6 +777,12 @@ namespace CycleMain
         private void Frm_main_Load(object sender, EventArgs e)
         {
             RestoreTitleString();
+            AnimTimer.Start();
+            AnimTimer.Enabled = true;
+            pictureBox1.Visible = true;
+            WaitClock.Interval = 3000;
+            WaitClock.Tick += new EventHandler(WaitClock_Tick);
+            StatusData("CycleFC Initialized.");
         }
 
         private void openROMToolStripMenuItem_Click(object sender, EventArgs e)
@@ -781,6 +795,17 @@ namespace CycleMain
             if (op.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
             {
                 OpenRom(op.FileName, true);
+
+                AnimTimer.Stop();
+                AnimTimer.Enabled = false;
+                pictureBox1.Visible = false;
+
+                uint crc32 = CalculateCRC32(op.FileName);
+                string convertString = crc32.ToString("X8");
+                string targetCRC = convertString;
+                string gameName = romDB.FindGameNameByCRC(targetCRC);
+
+                StatusData("Loaded ROM Image: " + op.SafeFileName + $" | {gameName}");
             }
             if (NES != null)
                 NES.PAUSE = false;
@@ -804,18 +829,20 @@ namespace CycleMain
 
         private void closeROMToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (mainThread != null)
-                mainThread.Abort();
             if (this.NES != null)
                 this.NES.ShutDown();
             NES = null;
+            AnimTimer.Start();
+            AnimTimer.Enabled = true;
+            pictureBox1.Visible = true;
+            StatusData("Unloaded ROM");
             RestoreTitleString();
             panel1.Refresh();
         }
 
         private void RestoreTitleString()
         {
-            this.Text = "CycleFC";
+            Text = "CycleFC ";
         }
 
         private void pauseToolStripMenuItem_Click(object sender, EventArgs e)
@@ -831,6 +858,7 @@ namespace CycleMain
             autoToolStripMenuItem1.Checked = true;
             Program.Settings.TVSystem = RegionFormat.NTSC;
             Program.Settings.AutoSwitchTvformat = true;
+            StatusData("Switched to Automatic region detection mode.");
             ApplyVideoSettings();
         }
 
@@ -841,6 +869,7 @@ namespace CycleMain
             autoToolStripMenuItem1.Checked = false;
             Program.Settings.TVSystem = RegionFormat.PAL;
             Program.Settings.AutoSwitchTvformat = false;
+            StatusData("Switched to PAL region mode.");
             ApplyVideoSettings();
         }
 
@@ -851,6 +880,7 @@ namespace CycleMain
             autoToolStripMenuItem1.Checked = false;
             Program.Settings.TVSystem = RegionFormat.NTSC;
             Program.Settings.AutoSwitchTvformat = false;
+            StatusData("Switched to NTSC region mode.");
             ApplyVideoSettings();
         }
 
@@ -872,6 +902,7 @@ namespace CycleMain
             {
                 Stream str = new FileStream(op.FileName, FileMode.Open, FileAccess.Read);
                 NES.LoadStateRequest(op.FileName, str);
+                StatusData("Loaded state file: " + op.SafeFileName);
             }
         }
 
@@ -883,6 +914,7 @@ namespace CycleMain
             {
                 Stream str = new FileStream(sav.FileName, FileMode.Create, FileAccess.Write);
                 NES.SaveStateRequest(sav.FileName, str);
+                StatusData("Saved state file: " + sav.FileName);
             }
         }
 
@@ -904,6 +936,7 @@ namespace CycleMain
                     Stream str = new FileStream(save.FileName, FileMode.Create, FileAccess.Write);
                     str.Write(NES.CpuMemory.srm, 0, 0x2000);
                     str.Close();
+                    StatusData("Save S-RAM file: " + save.FileName);
                 }
                 NES.PAUSE = false;
             }
@@ -927,6 +960,7 @@ namespace CycleMain
                     Stream str = new FileStream(op.FileName, FileMode.Open, FileAccess.Read);
                     str.Read(NES.CpuMemory.srm, 0, 0x2000);
                     str.Close();
+                    StatusData("Loaded S-RAM file: " + op.FileName);
                 }
                 NES.PAUSE = false;
             }
@@ -1035,7 +1069,7 @@ namespace CycleMain
             x5ToolStripMenuItem1.Checked = false;
             x6ToolStripMenuItem1.Checked = false;
             stretchToolStripMenuItem1.Checked = true;
-            Program.Settings.VideoSize = "stretch"; 
+            Program.Settings.VideoSize = "stretch";
             ApplyVideoSettings();
         }
 
@@ -1067,6 +1101,7 @@ namespace CycleMain
                     {
                         NES.Apu.Output.Recorder.Record(SAV.FileName, false);
                         audioRecorderToolStripMenuItem.Text = "Stop Recording";
+                        StatusData("Recording Sound...");
                     }
                     NES.PAUSE = false;
                 }
@@ -1074,7 +1109,7 @@ namespace CycleMain
                 {
                     NES.Apu.Output.Recorder.Stop();
                     audioRecorderToolStripMenuItem.Text = "Audio Recorder";
-                    SetStatus("WAV SAVED", 5);
+                    StatusData("Audio saved.");
                 }
             }
         }
@@ -1090,7 +1125,7 @@ namespace CycleMain
             {
                 NES.PAUSE = true;
                 romInfoWindow rr = new romInfoWindow(NES.Cartridge.FilePath);
-                rr.ShowDialog(this);
+                rr.ShowDialog();
                 NES.PAUSE = false;
             }
         }
@@ -1100,7 +1135,7 @@ namespace CycleMain
             if (NES != null)
                 NES.PAUSE = true;
             controlSettingsWindow settings = new controlSettingsWindow();
-            settings.ShowDialog(this);
+            settings.ShowDialog();
 
             RefreshControlsProfiles();
             if (NES != null)
@@ -1150,7 +1185,7 @@ namespace CycleMain
         {
             if (NES != null)
                 NES.PAUSE = true;
-            Frm_About about = new Frm_About();
+            AboutDiag about = new AboutDiag();
             about.ShowDialog(this);
             if (NES != null)
                 NES.PAUSE = false;
@@ -1171,7 +1206,7 @@ namespace CycleMain
                 NES.Apu.Output.SetVolume(Program.Settings.Volume);
             SetVolumeLabel();
             string vol = ((((100 * (3000 - Program.Settings.Volume)) / 3000) - 200) * -1).ToString() + " %";
-            SetStatus("Volume " + vol, 4);
+            StatusData("Volume " + vol);
         }
 
         private void paletteWindowToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1201,7 +1236,133 @@ namespace CycleMain
                 NES.Apu.Output.SetVolume(Program.Settings.Volume);
             SetVolumeLabel();
             string vol = ((((100 * (3000 - Program.Settings.Volume)) / 3000) - 200) * -1).ToString() + " %";
-            SetStatus("Volume " + vol, 4);
+            StatusData("Volume " + vol);
+        }
+
+        private void generalToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            generalOptionsWindow au = new generalOptionsWindow();
+            au.ShowDialog();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveSettings();
+            if (this.NES != null)
+                this.NES.ShutDown();
+            if (mainThread != null)
+                Environment.Exit(0);
+        }
+
+        private void AnimTimer_Tick(object sender, EventArgs e)
+        {
+            if (gradientBitmap != null)
+            {
+                gradientBitmap.Dispose();
+            }
+            int red = (255 + redPhase) % 256;
+            int green = (255 + greenPhase) % 256;
+            int blue = (255 + bluePhase) % 256;
+            try
+            {
+                gradientBitmap = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Unable to resize...");
+            }
+
+            using (Graphics g = Graphics.FromImage(gradientBitmap))
+            {
+                Rectangle rect = new Rectangle(0, 0, pictureBox1.Width, pictureBox1.Height);
+                PointF center = new PointF(rect.Width / 2f, rect.Height / 2f);
+                using (System.Drawing.Drawing2D.LinearGradientBrush brush = new System.Drawing.Drawing2D.LinearGradientBrush(rect, Color.FromArgb(red, green, blue), Color.FromArgb(0, 85, 255), angle))
+                {
+                    g.FillRectangle(brush, rect);
+                }
+            }
+            pictureBox1.Image = gradientBitmap;
+            redPhase = (redPhase + 2) % 256;
+            greenPhase = (greenPhase + 1) % 256;
+            bluePhase = (bluePhase + 4) % 256;
+            backgroundPhase = (backgroundPhase + 1) % 256;
+            angle += 1;
+            if (angle >= 360)
+            {
+                angle = 0;
+            }
+        }
+
+        private void WaitClock_Tick(object sender, EventArgs e)
+        {
+            label1.Visible = false;
+            WaitClock.Stop();
+        }
+
+        public string StatusData(String str)
+        {
+            WaitClock.Stop();
+            label1.Visible = true;
+            label1.Text = str;
+            WaitClock.Start();
+            return str;
+        }
+
+        public static class Crc32Helper
+        {
+            private static readonly uint[] Crc32Table;
+
+            static Crc32Helper()
+            {
+                Crc32Table = new uint[256];
+
+                for (uint i = 0; i < 256; i++)
+                {
+                    uint crc = i;
+                    for (int j = 0; j < 8; j++)
+                    {
+                        crc = (crc & 1) == 1 ? (crc >> 1) ^ 0xEDB88320 : crc >> 1;
+                    }
+                    Crc32Table[i] = crc;
+                }
+            }
+
+            public static uint UpdateCrc32(uint crc32, byte[] buffer, int offset, int length)
+            {
+                for (int i = offset; i < offset + length; i++)
+                {
+                    crc32 = (crc32 >> 8) ^ Crc32Table[(crc32 ^ buffer[i]) & 0xFF];
+                }
+                return crc32;
+            }
+        }
+
+        public static uint CalculateCRC32(string filePath)
+        {
+            using (FileStream fileStream = File.OpenRead(filePath))
+            {
+                uint crc32 = 0xFFFFFFFF;
+
+                // Skip the first 16 bytes
+                fileStream.Seek(16, SeekOrigin.Begin);
+
+                int bytesRead;
+                byte[] buffer = new byte[4096];
+
+                while ((bytesRead = fileStream.Read(buffer, 0, buffer.Length)) > 0)
+                {
+                    crc32 = Crc32Helper.UpdateCrc32(crc32, buffer, 0, bytesRead);
+                }
+
+                crc32 = ~crc32;
+
+                return crc32;
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

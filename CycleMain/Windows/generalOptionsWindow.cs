@@ -79,5 +79,10 @@ namespace CycleMain
             Program.Settings.Save();
             this.Close();
         }
+
+        private void generalOptionsWindow_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

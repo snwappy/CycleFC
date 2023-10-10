@@ -45,88 +45,6 @@ namespace CycleMain
                     textBox3_mirroring.Text = "Four Screen";
                 checkBox1_saveram.Checked = Program.Form_Main.NES.Cartridge.HasSaveRam;
                 checkBox2_trainer.Checked = Program.Form_Main.NES.Cartridge.HasTrainer;
-                if (Program.Form_Main.NES.Cartridge.DataBaseInfo.Game_Name != null)
-                {
-                    //Game info
-                    FieldInfo[] Fields = typeof(NesDatabaseGameInfo).GetFields(BindingFlags.Public
-                    | BindingFlags.Instance);
-                    bool ColoOr = false;
-                    for (int i = 0; i < Fields.Length; i++)
-                    {
-                        if (Fields[i].FieldType == typeof(System.String))
-                        {
-                            listView1.Items.Add(Fields[i].Name.Replace("_", " "));
-                            try
-                            {
-                                listView1.Items[listView1.Items.Count - 1].SubItems.Add(Fields[i].GetValue(Program.Form_Main.NES.Cartridge.DataBaseInfo).ToString());
-                            }
-                            catch
-                            {
-                                listView1.Items[listView1.Items.Count - 1].SubItems.Add("");
-                            }
-                            if (ColoOr)
-                                listView1.Items[listView1.Items.Count - 1].BackColor = Color.WhiteSmoke;
-                            ColoOr = !ColoOr;
-                        }
-                    }
-                    //chips
-                    for (int i = 0; i < Program.Form_Main.NES.Cartridge.DataBaseInfo.chip_type.Count; i++)
-                    {
-                        listView1.Items.Add("Chip " + (i + 1));
-                        listView1.Items[listView1.Items.Count - 1].SubItems.Add(Program.Form_Main.NES.Cartridge.DataBaseInfo.chip_type[i]);
-                        if (ColoOr)
-                            listView1.Items[listView1.Items.Count - 1].BackColor = Color.WhiteSmoke;
-                        ColoOr = !ColoOr;
-                    }
-                    //Cartidge
-                    Fields = typeof(NesDatabaseCartridgeInfo).GetFields(BindingFlags.Public
-                    | BindingFlags.Instance);
-                    ColoOr = false;
-                    for (int i = 0; i < Fields.Length; i++)
-                    {
-                        if (Fields[i].FieldType == typeof(System.String))
-                        {
-                            listView2.Items.Add(Fields[i].Name.Replace("_", " "));
-                            try
-                            {
-                                listView2.Items[listView2.Items.Count - 1].SubItems.Add(Fields[i].GetValue(Program.Form_Main.NES.Cartridge.DataBaseCartInfo).ToString());
-                            }
-                            catch
-                            {
-                                listView2.Items[listView2.Items.Count - 1].SubItems.Add("");
-                            }
-                            if (ColoOr)
-                                listView2.Items[listView2.Items.Count - 1].BackColor = Color.WhiteSmoke;
-                            ColoOr = !ColoOr;
-                        }
-                    }
-                    //DataBase
-                    Fields = typeof(NesDatabase).GetFields(BindingFlags.Public
-                  | BindingFlags.Static);
-                    ColoOr = false;
-                    for (int i = 0; i < Fields.Length; i++)
-                    {
-                        if (Fields[i].FieldType == typeof(System.String))
-                        {
-                            listView3.Items.Add(Fields[i].Name.Remove(0, 2));
-                            try
-                            {
-                                listView3.Items[listView3.Items.Count - 1].SubItems.Add(Fields[i].GetValue(Program.Form_Main.NES.Cartridge.DataBaseCartInfo).ToString());
-                            }
-                            catch
-                            {
-                                listView3.Items[listView3.Items.Count - 1].SubItems.Add("");
-                            }
-                            if (ColoOr)
-                                listView3.Items[listView3.Items.Count - 1].BackColor = Color.WhiteSmoke;
-                            ColoOr = !ColoOr;
-                        }
-                    }
-                }
-                else
-                {
-                    groupBox1.Enabled = false;
-                }
             }
         }
         private void button1_Click(object sender, EventArgs e)
@@ -136,10 +54,6 @@ namespace CycleMain
         private void button2_Click(object sender, EventArgs e)
         {
             RichTextBox textBox = new RichTextBox();
-            foreach (ListViewItem item in listView1.Items)
-            {
-                textBox.Text += item.Text + ": " + item.SubItems[1].Text + "\n";
-            }
             textBox.SelectAll();
             textBox.Copy();
             MessageBox.Show("Done !!");
@@ -147,10 +61,6 @@ namespace CycleMain
         private void button3_Click(object sender, EventArgs e)
         {
             RichTextBox textBox = new RichTextBox();
-            foreach (ListViewItem item in listView2.Items)
-            {
-                textBox.Text += item.Text + ": " + item.SubItems[1].Text + "\n";
-            }
             textBox.SelectAll();
             textBox.Copy();
             MessageBox.Show("Done !!");
@@ -158,10 +68,6 @@ namespace CycleMain
         private void button4_Click(object sender, EventArgs e)
         {
             RichTextBox textBox = new RichTextBox();
-            foreach (ListViewItem item in listView3.Items)
-            {
-                textBox.Text += item.Text + ": " + item.SubItems[1].Text + "\n";
-            }
             textBox.SelectAll();
             textBox.Copy();
             MessageBox.Show("Done !!");
