@@ -16,7 +16,7 @@
 \*********************************************************************/
 using System;
 
-namespace MyNes.Nes.Output.Video
+namespace CycleCore.Nes.Output.Video
 {
     public interface IVideoDevice : IDisposable
     {

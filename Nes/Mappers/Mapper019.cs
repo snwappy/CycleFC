@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace MyNes.Nes
+namespace CycleCore.Nes
 {
     class Mapper19 : Mapper
     {

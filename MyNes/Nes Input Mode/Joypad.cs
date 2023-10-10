@@ -24,9 +24,9 @@ using System.Linq;
 using System.Text;
 using SlimDX;
 using SlimDX.DirectInput;
-using MyNes.Nes.Input;
+using CycleCore.Nes.Input;
 
-namespace MyNes
+namespace CycleMain
 {
     public class Joypad : IJoypad
     {

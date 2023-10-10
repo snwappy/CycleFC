@@ -16,7 +16,7 @@
 \*********************************************************************/
 using word = System.Int32;
 
-namespace MyNes.Nes
+namespace CycleCore.Nes
 {
     public class NesMemory : Component
     {

@@ -23,7 +23,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace MyNes.Nes.Database
+namespace CycleCore.Nes.Database
 {
     public struct NesDatabaseGameInfo
     {

@@ -5,7 +5,7 @@
 *Code maintainance by Snappy Pupper (@snappypupper on Twitter)        *
 *Code updated: October 2023                                           *
 *                                                                     *                                                                     *
-*CycleFC is a fork of the original MyNES,                             *
+*CycleFC is a fork of the original CycleMain,                             *
 *which is free software: you can redistribute it and/or modify        *
 *it under the terms of the GNU General Public License as published by *
 *the Free Software Foundation, either version 3 of the License, or    *
@@ -19,9 +19,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using System.IO;
-using MyNes.Nes;
-using MyNes.Nes.Database;
-namespace MyNes
+using CycleCore.Nes;
+using CycleCore.Nes.Database;
+namespace CycleMain
 {
     static class Program
     {

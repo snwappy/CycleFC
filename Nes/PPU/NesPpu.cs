@@ -14,10 +14,10 @@
 *You should have received a copy of the GNU General Public License    *
 *along with this program.  If not, see <http://www.gnu.org/licenses/>.*
 \*********************************************************************/
-using MyNes.Nes.Output.Video;
+using CycleCore.Nes.Output.Video;
 using System;
 
-namespace MyNes.Nes
+namespace CycleCore.Nes
 {
     public class NesPpu : Component
     {

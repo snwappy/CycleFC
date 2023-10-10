@@ -16,7 +16,7 @@
 \*********************************************************************/
 using System;
 
-namespace MyNes.Nes
+namespace CycleCore.Nes
 {
     class Mapper74 : Mapper
     {

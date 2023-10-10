@@ -5,7 +5,7 @@
 *Code maintainance by Snappy Pupper (@snappypupper on Twitter)        *
 *Code updated: October 2023                                           *
 *                                                                     *                                                                     *
-*CycleFC is a fork of the original MyNES,                             *
+*CycleFC is a fork of the original CycleMain,                             *
 *which is free software: you can redistribute it and/or modify        *
 *it under the terms of the GNU General Public License as published by *
 *the Free Software Foundation, either version 3 of the License, or    *
@@ -14,7 +14,7 @@
 *You should have received a copy of the GNU General Public License    *
 *along with this program.  If not, see <http://www.gnu.org/licenses/>.*
 \*********************************************************************/
-namespace MyNes
+namespace CycleMain
 {
     partial class mainWindow
     {
@@ -126,7 +126,7 @@ namespace MyNes
             this.toolStripSplitButton7 = new System.Windows.Forms.ToolStripSplitButton();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
-            this.aboutMyNesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutCycleMainToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -168,7 +168,7 @@ namespace MyNes
             // toolStripSplitButton6
             // 
             this.toolStripSplitButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripSplitButton6.Image = global::MyNes.Properties.Resources.Opennnn;
+            this.toolStripSplitButton6.Image = global::CycleMain.Properties.Resources.Opennnn;
             this.toolStripSplitButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripSplitButton6.Name = "toolStripSplitButton6";
             this.toolStripSplitButton6.Size = new System.Drawing.Size(40, 28);
@@ -180,7 +180,7 @@ namespace MyNes
             // toolStripButton1
             // 
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::MyNes.Properties.Resources.properties;
+            this.toolStripButton1.Image = global::CycleMain.Properties.Resources.properties;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(28, 28);
@@ -207,7 +207,7 @@ namespace MyNes
             this.toolStripSeparator19,
             this.saveSRAMAsToolStripMenuItem,
             this.loadSRAMAsToolStripMenuItem});
-            this.toolStripSplitButton8.Image = global::MyNes.Properties.Resources.Save;
+            this.toolStripSplitButton8.Image = global::CycleMain.Properties.Resources.Save;
             this.toolStripSplitButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripSplitButton8.Name = "toolStripSplitButton8";
             this.toolStripSplitButton8.Size = new System.Drawing.Size(40, 28);
@@ -295,7 +295,7 @@ namespace MyNes
             // 
             // loadStateToolStripMenuItem
             // 
-            this.loadStateToolStripMenuItem.Image = global::MyNes.Properties.Resources.folder;
+            this.loadStateToolStripMenuItem.Image = global::CycleMain.Properties.Resources.folder;
             this.loadStateToolStripMenuItem.Name = "loadStateToolStripMenuItem";
             this.loadStateToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F9;
             this.loadStateToolStripMenuItem.Size = new System.Drawing.Size(200, 30);
@@ -317,7 +317,7 @@ namespace MyNes
             // 
             // saveStateToolStripMenuItem
             // 
-            this.saveStateToolStripMenuItem.Image = global::MyNes.Properties.Resources.Save;
+            this.saveStateToolStripMenuItem.Image = global::CycleMain.Properties.Resources.Save;
             this.saveStateToolStripMenuItem.Name = "saveStateToolStripMenuItem";
             this.saveStateToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F6;
             this.saveStateToolStripMenuItem.Size = new System.Drawing.Size(200, 30);
@@ -374,7 +374,7 @@ namespace MyNes
             this.regionToolStripMenuItem,
             this.toolStripSeparator7,
             this.noLimiterToolStripMenuItem});
-            this.toolStripSplitButton1.Image = global::MyNes.Properties.Resources.nes;
+            this.toolStripSplitButton1.Image = global::CycleMain.Properties.Resources.nes;
             this.toolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripSplitButton1.Name = "toolStripSplitButton1";
             this.toolStripSplitButton1.Size = new System.Drawing.Size(40, 28);
@@ -384,7 +384,7 @@ namespace MyNes
             // 
             // consoleToolStripMenuItem
             // 
-            this.consoleToolStripMenuItem.Image = global::MyNes.Properties.Resources.nes;
+            this.consoleToolStripMenuItem.Image = global::CycleMain.Properties.Resources.nes;
             this.consoleToolStripMenuItem.Name = "consoleToolStripMenuItem";
             this.consoleToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
             this.consoleToolStripMenuItem.Text = "&Console";
@@ -397,7 +397,7 @@ namespace MyNes
             // 
             // turnOffToolStripMenuItem
             // 
-            this.turnOffToolStripMenuItem.Image = global::MyNes.Properties.Resources.ON;
+            this.turnOffToolStripMenuItem.Image = global::CycleMain.Properties.Resources.ON;
             this.turnOffToolStripMenuItem.Name = "turnOffToolStripMenuItem";
             this.turnOffToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
             this.turnOffToolStripMenuItem.Text = "Turn off";
@@ -410,7 +410,7 @@ namespace MyNes
             // 
             // togglePauseToolStripMenuItem
             // 
-            this.togglePauseToolStripMenuItem.Image = global::MyNes.Properties.Resources.pause;
+            this.togglePauseToolStripMenuItem.Image = global::CycleMain.Properties.Resources.pause;
             this.togglePauseToolStripMenuItem.Name = "togglePauseToolStripMenuItem";
             this.togglePauseToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
             this.togglePauseToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
@@ -513,7 +513,7 @@ namespace MyNes
             this.showStatusStripToolStripMenuItem,
             this.toolStripSeparator20,
             this.romInfoToolStripMenuItem});
-            this.toolStripSplitButton2.Image = global::MyNes.Properties.Resources.Admin_tools;
+            this.toolStripSplitButton2.Image = global::CycleMain.Properties.Resources.Admin_tools;
             this.toolStripSplitButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripSplitButton2.Name = "toolStripSplitButton2";
             this.toolStripSplitButton2.Size = new System.Drawing.Size(40, 28);
@@ -523,7 +523,7 @@ namespace MyNes
             // 
             // generalToolStripMenuItem
             // 
-            this.generalToolStripMenuItem.Image = global::MyNes.Properties.Resources.Admin_tools;
+            this.generalToolStripMenuItem.Image = global::CycleMain.Properties.Resources.Admin_tools;
             this.generalToolStripMenuItem.Name = "generalToolStripMenuItem";
             this.generalToolStripMenuItem.Size = new System.Drawing.Size(207, 30);
             this.generalToolStripMenuItem.Text = "&General";
@@ -531,7 +531,7 @@ namespace MyNes
             // 
             // foldersToolStripMenuItem
             // 
-            this.foldersToolStripMenuItem.Image = global::MyNes.Properties.Resources.folder;
+            this.foldersToolStripMenuItem.Image = global::CycleMain.Properties.Resources.folder;
             this.foldersToolStripMenuItem.Name = "foldersToolStripMenuItem";
             this.foldersToolStripMenuItem.Size = new System.Drawing.Size(207, 30);
             this.foldersToolStripMenuItem.Text = "Folders";
@@ -571,7 +571,7 @@ namespace MyNes
             // 
             // romInfoToolStripMenuItem
             // 
-            this.romInfoToolStripMenuItem.Image = global::MyNes.Properties.Resources.nes_j;
+            this.romInfoToolStripMenuItem.Image = global::CycleMain.Properties.Resources.nes_j;
             this.romInfoToolStripMenuItem.Name = "romInfoToolStripMenuItem";
             this.romInfoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
             this.romInfoToolStripMenuItem.Size = new System.Drawing.Size(207, 30);
@@ -584,7 +584,7 @@ namespace MyNes
             this.toolStripSplitButton3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.configToolStripMenuItem1,
             this.profileToolStripMenuItem});
-            this.toolStripSplitButton3.Image = global::MyNes.Properties.Resources.MyNes;
+            this.toolStripSplitButton3.Image = global::CycleMain.Properties.Resources.CycleMain;
             this.toolStripSplitButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripSplitButton3.Name = "toolStripSplitButton3";
             this.toolStripSplitButton3.Size = new System.Drawing.Size(40, 28);
@@ -594,7 +594,7 @@ namespace MyNes
             // 
             // configToolStripMenuItem1
             // 
-            this.configToolStripMenuItem1.Image = global::MyNes.Properties.Resources.MyNes;
+            this.configToolStripMenuItem1.Image = global::CycleMain.Properties.Resources.CycleMain;
             this.configToolStripMenuItem1.Name = "configToolStripMenuItem1";
             this.configToolStripMenuItem1.Size = new System.Drawing.Size(188, 30);
             this.configToolStripMenuItem1.Text = "&Config...";
@@ -624,7 +624,7 @@ namespace MyNes
             this.toolStripSeparator16,
             this.takeSnapshotToolStripMenuItem,
             this.fullscreenToolStripMenuItem});
-            this.toolStripSplitButton4.Image = global::MyNes.Properties.Resources.TV;
+            this.toolStripSplitButton4.Image = global::CycleMain.Properties.Resources.TV;
             this.toolStripSplitButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripSplitButton4.Name = "toolStripSplitButton4";
             this.toolStripSplitButton4.Size = new System.Drawing.Size(40, 28);
@@ -634,7 +634,7 @@ namespace MyNes
             // 
             // configToolStripMenuItem
             // 
-            this.configToolStripMenuItem.Image = global::MyNes.Properties.Resources.TV;
+            this.configToolStripMenuItem.Image = global::CycleMain.Properties.Resources.TV;
             this.configToolStripMenuItem.Name = "configToolStripMenuItem";
             this.configToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
             this.configToolStripMenuItem.Text = "&Config...";
@@ -642,7 +642,7 @@ namespace MyNes
             // 
             // paletteToolStripMenuItem
             // 
-            this.paletteToolStripMenuItem.Image = global::MyNes.Properties.Resources.full_palette_1;
+            this.paletteToolStripMenuItem.Image = global::CycleMain.Properties.Resources.full_palette_1;
             this.paletteToolStripMenuItem.Name = "paletteToolStripMenuItem";
             this.paletteToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
             this.paletteToolStripMenuItem.Text = "&Palette (RGB)";
@@ -733,7 +733,7 @@ namespace MyNes
             this.volume100ToolStripMenuItem,
             this.toolStripSeparator21,
             this.recordeSoundToolStripMenuItem});
-            this.toolStripSplitButton5.Image = global::MyNes.Properties.Resources.sound;
+            this.toolStripSplitButton5.Image = global::CycleMain.Properties.Resources.sound;
             this.toolStripSplitButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripSplitButton5.Name = "toolStripSplitButton5";
             this.toolStripSplitButton5.Size = new System.Drawing.Size(40, 28);
@@ -743,7 +743,7 @@ namespace MyNes
             // 
             // soundChannelsToolStripMenuItem
             // 
-            this.soundChannelsToolStripMenuItem.Image = global::MyNes.Properties.Resources.sound;
+            this.soundChannelsToolStripMenuItem.Image = global::CycleMain.Properties.Resources.sound;
             this.soundChannelsToolStripMenuItem.Name = "soundChannelsToolStripMenuItem";
             this.soundChannelsToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
             this.soundChannelsToolStripMenuItem.Text = "Sound &Channels";
@@ -784,7 +784,7 @@ namespace MyNes
             // 
             // recordeSoundToolStripMenuItem
             // 
-            this.recordeSoundToolStripMenuItem.Image = global::MyNes.Properties.Resources.Record;
+            this.recordeSoundToolStripMenuItem.Image = global::CycleMain.Properties.Resources.Record;
             this.recordeSoundToolStripMenuItem.Name = "recordeSoundToolStripMenuItem";
             this.recordeSoundToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F10;
             this.recordeSoundToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
@@ -802,8 +802,8 @@ namespace MyNes
             this.toolStripSplitButton7.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.helpToolStripMenuItem,
             this.toolStripSeparator13,
-            this.aboutMyNesToolStripMenuItem});
-            this.toolStripSplitButton7.Image = global::MyNes.Properties.Resources.Help_Windows;
+            this.aboutCycleMainToolStripMenuItem});
+            this.toolStripSplitButton7.Image = global::CycleMain.Properties.Resources.Help_Windows;
             this.toolStripSplitButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripSplitButton7.Name = "toolStripSplitButton7";
             this.toolStripSplitButton7.Size = new System.Drawing.Size(40, 28);
@@ -813,7 +813,7 @@ namespace MyNes
             // 
             // helpToolStripMenuItem
             // 
-            this.helpToolStripMenuItem.Image = global::MyNes.Properties.Resources.Help_Windows;
+            this.helpToolStripMenuItem.Image = global::CycleMain.Properties.Resources.Help_Windows;
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
@@ -825,13 +825,13 @@ namespace MyNes
             this.toolStripSeparator13.Name = "toolStripSeparator13";
             this.toolStripSeparator13.Size = new System.Drawing.Size(185, 6);
             // 
-            // aboutMyNesToolStripMenuItem
+            // aboutCycleMainToolStripMenuItem
             // 
-            this.aboutMyNesToolStripMenuItem.Image = global::MyNes.Properties.Resources.MyNesIcon1;
-            this.aboutMyNesToolStripMenuItem.Name = "aboutMyNesToolStripMenuItem";
-            this.aboutMyNesToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
-            this.aboutMyNesToolStripMenuItem.Text = "&About My Nes";
-            this.aboutMyNesToolStripMenuItem.Click += new System.EventHandler(this.toolStripButton4_Click);
+            this.aboutCycleMainToolStripMenuItem.Image = global::CycleMain.Properties.Resources.CycleMainIcon1;
+            this.aboutCycleMainToolStripMenuItem.Name = "aboutCycleMainToolStripMenuItem";
+            this.aboutCycleMainToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.aboutCycleMainToolStripMenuItem.Text = "&About My Nes";
+            this.aboutCycleMainToolStripMenuItem.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
             // statusStrip1
             // 
@@ -963,7 +963,7 @@ namespace MyNes
         private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton7;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
-        private System.Windows.Forms.ToolStripMenuItem aboutMyNesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutCycleMainToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel StatusLabel;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator15;
         private System.Windows.Forms.ToolStripMenuItem showStatusStripToolStripMenuItem;

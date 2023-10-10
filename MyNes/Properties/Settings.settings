@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MyNes.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CycleMain.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
     <Setting Name="Win_size" Type="System.Drawing.Size" Scope="User">
@@ -8,7 +8,7 @@
     <Setting Name="Win_location" Type="System.Drawing.Point" Scope="User">
       <Value Profile="(Default)">10, 10</Value>
     </Setting>
-    <Setting Name="PaletteFormat" Type="MyNes.Nes.PaletteFormat" Scope="User">
+    <Setting Name="PaletteFormat" Type="CycleCore.Nes.PaletteFormat" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="VideoSize" Type="System.String" Scope="User">
@@ -65,10 +65,10 @@
     <Setting Name="Volume" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="CurrentControlProfile" Type="MyNes.ControlProfile" Scope="User">
+    <Setting Name="CurrentControlProfile" Type="CycleMain.ControlProfile" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="ControlProfiles" Type="MyNes.ControlProfilesCollection" Scope="User">
+    <Setting Name="ControlProfiles" Type="CycleMain.ControlProfilesCollection" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="Recents" Type="System.Collections.Specialized.StringCollection" Scope="User">
@@ -116,7 +116,7 @@
     <Setting Name="IsDetailsView" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="TVSystem" Type="MyNes.Nes.RegionFormat" Scope="User">
+    <Setting Name="TVSystem" Type="CycleCore.Nes.RegionFormat" Scope="User">
       <Value Profile="(Default)">Us</Value>
     </Setting>
     <Setting Name="DebuggerLocation" Type="System.Drawing.Point" Scope="User">

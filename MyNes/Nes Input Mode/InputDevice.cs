@@ -25,7 +25,7 @@ using System.Text;
 using SlimDX;
 using SlimDX.DirectInput;
 
-namespace MyNes.Nes.Input
+namespace CycleCore.Nes.Input
 {
     public class InputDevice
     {

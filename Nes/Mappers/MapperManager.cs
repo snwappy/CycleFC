@@ -16,7 +16,7 @@
 \*********************************************************************/
 using System;
 using System.Collections.Generic;
-namespace MyNes.Nes
+namespace CycleCore.Nes
 {
     public static class MapperManager
     {
@@ -28,7 +28,7 @@ namespace MyNes.Nes
 
             for (int i = 0; i < 256; i++)
             {
-                mappers[i] = assembly.GetType("MyNes.Nes.Mapper" + i.ToString("D2"), false, false);
+                mappers[i] = assembly.GetType("CycleCore.Nes.Mapper" + i.ToString("D2"), false, false);
             }
         }
         public static Type Fetch(byte number)

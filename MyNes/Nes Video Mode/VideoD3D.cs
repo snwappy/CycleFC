@@ -2,12 +2,12 @@
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
-using MyNes.Nes;
-using MyNes.Nes.Output.Video;
+using CycleCore.Nes;
+using CycleCore.Nes.Output.Video;
 using SlimDX;
 using SlimDX.Direct3D9;
 
-namespace MyNes
+namespace CycleMain
 {
     public class VideoD3D : IVideoDevice, IDisposable
     {

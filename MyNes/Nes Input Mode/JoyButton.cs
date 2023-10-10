@@ -24,8 +24,8 @@ using System.Linq;
 using System.Text;
 using SlimDX;
 using SlimDX.DirectInput;
-using MyNes.Nes.Input;
-namespace MyNes
+using CycleCore.Nes.Input;
+namespace CycleMain
 {
     public class JoyButton
     {

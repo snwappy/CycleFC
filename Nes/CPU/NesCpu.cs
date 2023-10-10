@@ -17,7 +17,7 @@
 using word = System.UInt16;
 using System;
 
-namespace MyNes.Nes
+namespace CycleCore.Nes
 {
     public class NesCpu : Component
     {

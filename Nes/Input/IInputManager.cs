@@ -19,7 +19,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace MyNes.Nes.Input
+namespace CycleCore.Nes.Input
 {
     public interface IInputDevice
     {

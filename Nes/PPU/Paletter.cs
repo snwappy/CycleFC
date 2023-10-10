@@ -16,7 +16,7 @@
 \*********************************************************************/
 using System.IO;
 
-namespace MyNes.Nes
+namespace CycleCore.Nes
 {
     public class NesPalette
     {

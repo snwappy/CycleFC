@@ -19,7 +19,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace MyNes.Nes.Output.Audio
+namespace CycleCore.Nes.Output.Audio
 {
     public interface IWaveRecorder
     {

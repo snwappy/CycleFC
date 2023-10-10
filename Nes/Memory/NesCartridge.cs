@@ -17,9 +17,9 @@
 using System;
 using System.IO;
 using System.Security.Cryptography;
-using MyNes.Nes.Database;
+using CycleCore.Nes.Database;
 
-namespace MyNes.Nes
+namespace CycleCore.Nes
 {
     public class NesCartridge : Component
     {

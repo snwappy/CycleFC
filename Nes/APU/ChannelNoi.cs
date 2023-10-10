@@ -17,7 +17,7 @@
 
 using System;
 
-namespace MyNes.Nes
+namespace CycleCore.Nes
 {
     public class ChannelNoi : NesApuChannel
     {

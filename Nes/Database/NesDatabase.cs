@@ -25,7 +25,7 @@ using System.Text;
 using System.IO;
 using System.Xml;
 
-namespace MyNes.Nes.Database
+namespace CycleCore.Nes.Database
 {
     /// <summary>
     /// Class for known games database

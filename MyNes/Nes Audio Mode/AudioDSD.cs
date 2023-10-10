@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Windows.Forms;
-using MyNes.Nes;
-using MyNes.Nes.Output.Audio;
+using CycleCore.Nes;
+using CycleCore.Nes.Output.Audio;
 using SlimDX.DirectSound;
 using SlimDX.Multimedia;
 
-namespace MyNes
+namespace CycleMain
 {
     public class AudioDSD : IAudioDevice
     {

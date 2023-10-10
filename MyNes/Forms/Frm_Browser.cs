@@ -5,7 +5,7 @@
 *Code maintainance by Snappy Pupper (@snappypupper on Twitter)        *
 *Code updated: October 2023                                           *
 *                                                                     *                                                                     *
-*CycleFC is a fork of the original MyNES,                             *
+*CycleFC is a fork of the original CycleMain,                             *
 *which is free software: you can redistribute it and/or modify        *
 *it under the terms of the GNU General Public License as published by *
 *the Free Software Foundation, either version 3 of the License, or    *
@@ -26,15 +26,15 @@ using System.Windows.Forms;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization;
 
-using MyNes.Nes;
+using CycleCore.Nes;
 
-namespace MyNes
+namespace CycleMain
 {
     public partial class Frm_Browser : Form
     {
         int RatingX = 0;
         bool IsClosing = false;
-        Frm_main _TheMainForm;
+        mainWindow _TheMainForm;
         TreeNode_Folder _SelectedFolder;
         public bool ShouldSaveFolders = false;
         FoldersHolder BASE = new FoldersHolder();
@@ -44,7 +44,7 @@ namespace MyNes
         bool AtoZ = false;
         bool IsScrolling = false;
 
-        public Frm_Browser(Frm_main TheMainForm)
+        public Frm_Browser(mainWindow TheMainForm)
         {
             _TheMainForm = TheMainForm;
             InitializeComponent();
@@ -213,25 +213,25 @@ namespace MyNes
                     case ".rar":
                     case ".7z":
                         //SevenZip.SevenZipExtractor EXTRACTOR = new SevenZip.SevenZipExtractor(Dir);
-                        Directory.CreateDirectory(Path.GetTempPath() + "\\mynes\\");
-                        for (int i = 0; i < Directory.GetFiles(Path.GetTempPath() + "\\mynes\\").Length; i++)
+                        Directory.CreateDirectory(Path.GetTempPath() + "\\CycleMain\\");
+                        for (int i = 0; i < Directory.GetFiles(Path.GetTempPath() + "\\CycleMain\\").Length; i++)
                         {
                             try
                             {
-                                File.Delete(Directory.GetFiles(Path.GetTempPath() + "\\mynes\\")[i]);
+                                File.Delete(Directory.GetFiles(Path.GetTempPath() + "\\CycleMain\\")[i]);
                                 i = -1;
                             }
                             catch { }
                         }
-                        //EXTRACTOR.ExtractArchive(Path.GetTempPath() + "\\mynes\\");
+                        //EXTRACTOR.ExtractArchive(Path.GetTempPath() + "\\CycleMain\\");
                         bool foundsupported = false;
-                        string mappers = "(" + Directory.GetFiles(Path.GetTempPath() + "\\mynes\\").Length.ToString() + " roms) ";
-                        for (int i = 0; i < Directory.GetFiles(Path.GetTempPath() + "\\mynes\\").Length; i++)
+                        string mappers = "(" + Directory.GetFiles(Path.GetTempPath() + "\\CycleMain\\").Length.ToString() + " roms) ";
+                        for (int i = 0; i < Directory.GetFiles(Path.GetTempPath() + "\\CycleMain\\").Length; i++)
                         {
-                            if (Path.GetExtension(Directory.GetFiles(Path.GetTempPath() + "\\mynes\\")[i]).ToLower() == ".nes")
+                            if (Path.GetExtension(Directory.GetFiles(Path.GetTempPath() + "\\CycleMain\\")[i]).ToLower() == ".nes")
                             {
                                 header = new NesCartridge(null);
-                                LoadRomStatus stat = header.Load(Dir, new FileStream(Directory.GetFiles(Path.GetTempPath() + "\\mynes\\")[i], FileMode.Open, FileAccess.Read), null, true);
+                                LoadRomStatus stat = header.Load(Dir, new FileStream(Directory.GetFiles(Path.GetTempPath() + "\\CycleMain\\")[i], FileMode.Open, FileAccess.Read), null, true);
                                 if (stat == LoadRomStatus.LoadSuccess |
                                     stat == LoadRomStatus.InvalidMapper)
                                 {
@@ -354,7 +354,7 @@ namespace MyNes
             if (treeView1.SelectedNode == null)
                 return;
             listView1.Items.Clear();
-            pictureBox1.Image = Properties.Resources.MyNesIcon;
+            pictureBox1.Image = Properties.Resources.CycleMainIcon;
             richTextBox1.Text = "";
             _SelectedFolder = (TreeNode_Folder)treeView1.SelectedNode;
             //Properties
@@ -707,7 +707,7 @@ namespace MyNes
         }
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            pictureBox1.Image = Properties.Resources.MyNesIcon;
+            pictureBox1.Image = Properties.Resources.CycleMainIcon;
             richTextBox1.Text = "";
             if (listView1.SelectedItems.Count != 1)
                 return;
@@ -741,7 +741,7 @@ namespace MyNes
                         }
                     }
                 }
-                catch { pictureBox1.Image = Properties.Resources.MyNesIcon; }
+                catch { pictureBox1.Image = Properties.Resources.CycleMainIcon; }
             }
             #endregion
             if (Directory.Exists(_SelectedFolder.Folder.InfosFolder))

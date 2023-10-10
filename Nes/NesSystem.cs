@@ -16,11 +16,11 @@
 \*********************************************************************/
 using System.IO;
 using System.Threading;
-using MyNes.Nes.Input;
-using MyNes.Nes.Output.Audio;
-using MyNes.Nes.Output.Video;
+using CycleCore.Nes.Input;
+using CycleCore.Nes.Output.Audio;
+using CycleCore.Nes.Output.Video;
 
-namespace MyNes.Nes
+namespace CycleCore.Nes
 {
     public class NesSystem
     {

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 
-namespace MyNes
+namespace CycleMain
 {
     partial class Frm_About : Form
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace MyNes
+namespace CycleMain
 {
     public partial class Frm_PathsOptions : Form
     {

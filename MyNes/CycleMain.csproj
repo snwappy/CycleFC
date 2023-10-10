@@ -160,11 +160,11 @@
     <Compile Include="Forms\Frm_Key.Designer.cs">
       <DependentUpon>Frm_Key.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Frm_main.cs">
+    <Compile Include="Forms\mainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Frm_main.Designer.cs">
-      <DependentUpon>Frm_main.cs</DependentUpon>
+    <Compile Include="Forms\mainWindow.Designer.cs">
+      <DependentUpon>mainWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Frm_Palette.cs">
       <SubType>Form</SubType>
@@ -231,8 +231,8 @@
     <EmbeddedResource Include="Forms\Frm_Key.resx">
       <DependentUpon>Frm_Key.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Frm_main.resx">
-      <DependentUpon>Frm_main.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\mainWindow.resx">
+      <DependentUpon>mainWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Palette.resx">
       <DependentUpon>Frm_Palette.cs</DependentUpon>

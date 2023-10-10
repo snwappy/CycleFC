@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MyNes.Properties {
+namespace CycleMain.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -49,9 +49,9 @@ namespace MyNes.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::MyNes.Nes.PaletteFormat PaletteFormat {
+        public global::CycleCore.Nes.PaletteFormat PaletteFormat {
             get {
-                return ((global::MyNes.Nes.PaletteFormat)(this["PaletteFormat"]));
+                return ((global::CycleCore.Nes.PaletteFormat)(this["PaletteFormat"]));
             }
             set {
                 this["PaletteFormat"] = value;
@@ -276,9 +276,9 @@ namespace MyNes.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::MyNes.ControlProfile CurrentControlProfile {
+        public global::CycleMain.ControlProfile CurrentControlProfile {
             get {
-                return ((global::MyNes.ControlProfile)(this["CurrentControlProfile"]));
+                return ((global::CycleMain.ControlProfile)(this["CurrentControlProfile"]));
             }
             set {
                 this["CurrentControlProfile"] = value;
@@ -287,9 +287,9 @@ namespace MyNes.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::MyNes.ControlProfilesCollection ControlProfiles {
+        public global::CycleMain.ControlProfilesCollection ControlProfiles {
             get {
-                return ((global::MyNes.ControlProfilesCollection)(this["ControlProfiles"]));
+                return ((global::CycleMain.ControlProfilesCollection)(this["ControlProfiles"]));
             }
             set {
                 this["ControlProfiles"] = value;
@@ -478,9 +478,9 @@ namespace MyNes.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Us")]
-        public global::MyNes.Nes.RegionFormat TVSystem {
+        public global::CycleCore.Nes.RegionFormat TVSystem {
             get {
-                return ((global::MyNes.Nes.RegionFormat)(this["TVSystem"]));
+                return ((global::CycleCore.Nes.RegionFormat)(this["TVSystem"]));
             }
             set {
                 this["TVSystem"] = value;

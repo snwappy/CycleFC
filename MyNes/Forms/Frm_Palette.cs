@@ -5,7 +5,7 @@
 *Code maintainance by Snappy Pupper (@snappypupper on Twitter)        *
 *Code updated: October 2023                                           *
 *                                                                     *                                                                     *
-*CycleFC is a fork of the original MyNES,                             *
+*CycleFC is a fork of the original CycleMain,                             *
 *which is free software: you can redistribute it and/or modify        *
 *it under the terms of the GNU General Public License as published by *
 *the Free Software Foundation, either version 3 of the License, or    *
@@ -24,9 +24,9 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Windows.Forms;
-using MyNes.Nes;
+using CycleCore.Nes;
 
-namespace MyNes
+namespace CycleMain
 {
     public partial class FormPalette : Form
     {
@@ -70,17 +70,17 @@ namespace MyNes
             textBox1.Enabled = !Program.Settings.PaletteFormat.UseInternalPalette;
             switch (Program.Settings.PaletteFormat.UseInternalPaletteMode)
             {
-                case MyNes.Nes.UseInternalPaletteMode.Auto:
+                case CycleCore.Nes.UseInternalPaletteMode.Auto:
                     radioButton3_auto.Checked = true;
                     radioButton4_pal.Checked = false;
                     radioButton5_ntsc.Checked = false;
                     break;
-                case MyNes.Nes.UseInternalPaletteMode.NTSC:
+                case CycleCore.Nes.UseInternalPaletteMode.NTSC:
                     radioButton3_auto.Checked = false;
                     radioButton4_pal.Checked = false;
                     radioButton5_ntsc.Checked = true;
                     break;
-                case MyNes.Nes.UseInternalPaletteMode.PAL:
+                case CycleCore.Nes.UseInternalPaletteMode.PAL:
                     radioButton3_auto.Checked = false;
                     radioButton4_pal.Checked = true;
                     radioButton5_ntsc.Checked = false;
@@ -211,17 +211,17 @@ namespace MyNes
             textBox1.Enabled = !Program.Settings.PaletteFormat.UseInternalPalette;
             switch (Program.Settings.PaletteFormat.UseInternalPaletteMode)
             {
-                case MyNes.Nes.UseInternalPaletteMode.Auto:
+                case CycleCore.Nes.UseInternalPaletteMode.Auto:
                     radioButton3_auto.Checked = true;
                     radioButton4_pal.Checked = false;
                     radioButton5_ntsc.Checked = false;
                     break;
-                case MyNes.Nes.UseInternalPaletteMode.NTSC:
+                case CycleCore.Nes.UseInternalPaletteMode.NTSC:
                     radioButton3_auto.Checked = false;
                     radioButton4_pal.Checked = false;
                     radioButton5_ntsc.Checked = true;
                     break;
-                case MyNes.Nes.UseInternalPaletteMode.PAL:
+                case CycleCore.Nes.UseInternalPaletteMode.PAL:
                     radioButton3_auto.Checked = false;
                     radioButton4_pal.Checked = true;
                     radioButton5_ntsc.Checked = false;
@@ -235,13 +235,13 @@ namespace MyNes
         {
             switch (Program.Settings.PaletteFormat.UseInternalPaletteMode)
             {
-                case MyNes.Nes.UseInternalPaletteMode.Auto:
+                case CycleCore.Nes.UseInternalPaletteMode.Auto:
                     ShowPalette(NesPalette.NTSCPalette);
                     break;
-                case MyNes.Nes.UseInternalPaletteMode.NTSC:
+                case CycleCore.Nes.UseInternalPaletteMode.NTSC:
                     ShowPalette(NesPalette.NTSCPalette);
                     break;
-                case MyNes.Nes.UseInternalPaletteMode.PAL:
+                case CycleCore.Nes.UseInternalPaletteMode.PAL:
                     ShowPalette(NesPalette.PALPalette);
                     break;
             }

@@ -24,9 +24,9 @@ using System.Linq;
 using System.Text;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
-using MyNes.Nes.Input;
+using CycleCore.Nes.Input;
 
-namespace MyNes
+namespace CycleMain
 {
     public class TIMER : ITimer
     {

@@ -16,7 +16,7 @@
 \*********************************************************************/
 using System;
 
-namespace MyNes.Nes.Output.Audio
+namespace CycleCore.Nes.Output.Audio
 {
     public interface IAudioDevice
     {

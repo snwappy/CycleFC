@@ -18,7 +18,7 @@
 using System;
 using System.IO;
 
-namespace MyNes.Nes
+namespace CycleCore.Nes
 {
     /*
      * To create new save state file, simply create instance of this class with "Write access, Create mode" stream

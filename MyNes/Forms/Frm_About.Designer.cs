@@ -1,4 +1,4 @@
-﻿namespace MyNes
+﻿namespace CycleMain
 {
     partial class Frm_About
     {
@@ -113,7 +113,7 @@
             // logoPictureBox
             // 
             this.logoPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.logoPictureBox.Image = global::MyNes.Properties.Resources.MyNesIcon;
+            this.logoPictureBox.Image = global::CycleMain.Properties.Resources.CycleMainIcon;
             this.logoPictureBox.Location = new System.Drawing.Point(3, 3);
             this.logoPictureBox.Name = "logoPictureBox";
             this.tableLayoutPanel.SetRowSpan(this.logoPictureBox, 5);

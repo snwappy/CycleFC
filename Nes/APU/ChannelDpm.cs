@@ -20,7 +20,7 @@ H:\Snappy Codes\NES\CyclesFC*but WITHOUT ANY WARRANTY; without even the implied 
 \*********************************************************************/
 using System;
 
-namespace MyNes.Nes
+namespace CycleCore.Nes
 {
     public class ChannelDpm : NesApuChannel
     {

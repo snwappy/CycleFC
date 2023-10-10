@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MyNes.Properties {
+namespace CycleMain.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace MyNes.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MyNes.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CycleMain.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -113,9 +113,9 @@ namespace MyNes.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap MyNes {
+        internal static System.Drawing.Bitmap CycleMain {
             get {
-                object obj = ResourceManager.GetObject("MyNes", resourceCulture);
+                object obj = ResourceManager.GetObject("CycleMain", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +123,9 @@ namespace MyNes.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap MyNesIcon {
+        internal static System.Drawing.Bitmap CycleMainIcon {
             get {
-                object obj = ResourceManager.GetObject("MyNesIcon", resourceCulture);
+                object obj = ResourceManager.GetObject("CycleMainIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +133,9 @@ namespace MyNes.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap MyNesIcon1 {
+        internal static System.Drawing.Bitmap CycleMainIcon1 {
             get {
-                object obj = ResourceManager.GetObject("MyNesIcon1", resourceCulture);
+                object obj = ResourceManager.GetObject("CycleMainIcon1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

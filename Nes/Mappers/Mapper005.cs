@@ -19,7 +19,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 /*Re-writen for version 4 by Ala Hadid at : Tuesday, October 25, 2011*/
-namespace MyNes.Nes
+namespace CycleCore.Nes
 {
     class Mapper05 : Mapper
     {

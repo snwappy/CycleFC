@@ -5,7 +5,7 @@
 *Code maintainance by Snappy Pupper (@snappypupper on Twitter)        *
 *Code updated: October 2023                                           *
 *                                                                     *                                                                     *
-*CycleFC is a fork of the original MyNES,                             *
+*CycleFC is a fork of the original CycleMain,                             *
 *which is free software: you can redistribute it and/or modify        *
 *it under the terms of the GNU General Public License as published by *
 *the Free Software Foundation, either version 3 of the License, or    *
@@ -14,7 +14,7 @@
 *You should have received a copy of the GNU General Public License    *
 *along with this program.  If not, see <http://www.gnu.org/licenses/>.*
 \*********************************************************************/
-namespace MyNes
+namespace CycleMain
 {
     partial class Frm_Browser
     {
@@ -365,7 +365,7 @@ namespace MyNes
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::MyNes.Properties.Resources.MyNesIcon;
+            this.pictureBox1.Image = global::CycleMain.Properties.Resources.CycleMainIcon;
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(243, 172);

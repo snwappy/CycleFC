@@ -4,12 +4,12 @@ using System.Drawing;
 using System.IO;
 using System.Threading;
 using System.Windows.Forms;
-using MyNes.Nes;
-using MyNes.Nes.Output.Video;
+using CycleCore.Nes;
+using CycleCore.Nes.Output.Video;
 
-namespace MyNes
+namespace CycleMain
 {
-    public partial class Frm_main : Form
+    public partial class mainWindow : Form
     {
         //SevenZip.SevenZipExtractor EXTRACTOR;
         Thread mainThread;
@@ -20,7 +20,7 @@ namespace MyNes
         Frm_Browser br;
         Frm_Console Debugger;
 
-        public Frm_main(string[] Args)
+        public mainWindow(string[] Args)
         {
             InitializeComponent();
             LoadSettings();
@@ -124,7 +124,7 @@ namespace MyNes
                 this.NES.ShutDown();
 
             // new nes
-            this.NES = new Nes.NesSystem(new TIMER());
+            this.NES = new CycleCore.Nes.NesSystem(new TIMER());
             //create rom file stream
             Stream romStream = new FileStream(FileName, FileMode.Open, FileAccess.Read);
             //create the sram file
