@@ -1,0 +1,11 @@
+H:\Snappy Codes\NES\CycleFC\Nes\bin\x64\Debug\Nes.dll
+H:\Snappy Codes\NES\CycleFC\Nes\bin\x64\Debug\Nes.pdb
+H:\Snappy Codes\NES\CycleFC\Nes\bin\x64\Debug\SevenZip.dll
+H:\Snappy Codes\NES\CycleFC\Nes\bin\x64\Debug\SlimDX.dll
+H:\Snappy Codes\NES\CycleFC\Nes\obj\x64\Debug\Nes.csproj.AssemblyReference.cache
+H:\Snappy Codes\NES\CycleFC\Nes\obj\x64\Debug\MyNes.Nes.Properties.Resources.resources
+H:\Snappy Codes\NES\CycleFC\Nes\obj\x64\Debug\Nes.csproj.GenerateResource.cache
+H:\Snappy Codes\NES\CycleFC\Nes\obj\x64\Debug\Nes.csproj.CoreCompileInputs.cache
+H:\Snappy Codes\NES\CycleFC\Nes\obj\x64\Debug\Nes.csproj.CopyComplete
+H:\Snappy Codes\NES\CycleFC\Nes\obj\x64\Debug\Nes.dll
+H:\Snappy Codes\NES\CycleFC\Nes\obj\x64\Debug\Nes.pdb
