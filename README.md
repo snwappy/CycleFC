@@ -37,6 +37,7 @@ See the GNU General Public License for more details. You should have received a 
 - [SlimDX (for DirectSound Wrapper)](https://github.com/SlimDX/slimdx) (Note: Is now deprecated)
 - [NESCartDb for NES / Famicom Cartridge Database](https://nescartdb.com/)
 - [NESDev Wiki](https://www.nesdev.org/wiki/Nesdev_Wiki)
+- SevenZip
 
 # Special Thanks
 - Ala Hadid (ahdsoftware@gmail.com) - for creating the original
