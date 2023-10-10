@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E00436E0-FE00-48B2-9876-CD8543CAFD92}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyNes</RootNamespace>
+    <AssemblyName>MyNes</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'x86|x86'">
+    <OutputPath>bin\x86\x86\</OutputPath>
+    <Optimize>true</Optimize>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>MyNes.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\MyNesIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'x64|x86'">
+    <OutputPath>bin\x86\x64\</OutputPath>
+    <Optimize>true</Optimize>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'x86|x64'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x64\x86\</OutputPath>
+    <Optimize>true</Optimize>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'x64|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\x64\</OutputPath>
+    <Optimize>true</Optimize>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SevenZip, Version=19.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SevenZip.19.0.0\lib\net20\SevenZip.dll</HintPath>
+    </Reference>
+    <Reference Include="SevenZipSharp">
+      <HintPath>..\..\libraries\SevenZipSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SlimDX, Version=4.0.13.43, Culture=neutral, PublicKeyToken=b1b0c32fd1ffe4f9, processorArchitecture=x86">
+      <HintPath>..\packages\SlimDX.4.0.13.44\lib\NET40\SlimDX.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\Frm_About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_About.Designer.cs">
+      <DependentUpon>Frm_About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Archives.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Archives.Designer.cs">
+      <DependentUpon>Frm_Archives.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_AudioOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_AudioOptions.Designer.cs">
+      <DependentUpon>Frm_AudioOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Browser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Browser.designer.cs">
+      <DependentUpon>Frm_Browser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Console.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Console.designer.cs">
+      <DependentUpon>Frm_Console.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_ControlsSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_ControlsSettings.Designer.cs">
+      <DependentUpon>Frm_ControlsSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_EnterName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_EnterName.Designer.cs">
+      <DependentUpon>Frm_EnterName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_GeneralOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_GeneralOptions.Designer.cs">
+      <DependentUpon>Frm_GeneralOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Key.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Key.Designer.cs">
+      <DependentUpon>Frm_Key.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_main.Designer.cs">
+      <DependentUpon>Frm_main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Palette.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Palette.Designer.cs">
+      <DependentUpon>Frm_Palette.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_PathsOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_PathsOptions.Designer.cs">
+      <DependentUpon>Frm_PathsOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_RomInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_RomInfo.Designer.cs">
+      <DependentUpon>Frm_RomInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nes Audio Mode\AudioDSD.cs" />
+    <Compile Include="Nes Audio Mode\WaveRecorder.cs" />
+    <Compile Include="Nes Input Mode\InputDevice.cs" />
+    <Compile Include="Nes Input Mode\InputManager.cs" />
+    <Compile Include="Nes Input Mode\JoyButton.cs" />
+    <Compile Include="Nes Input Mode\Joypad.cs" />
+    <Compile Include="Nes Input Mode\TIMER.cs" />
+    <Compile Include="Nes Video Mode\Frm_D3DOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nes Video Mode\Frm_D3DOptions.designer.cs">
+      <DependentUpon>Frm_D3DOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nes Video Mode\VideoD3D.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Types\ControlProfile.cs" />
+    <Compile Include="Types\MFile.cs" />
+    <Compile Include="Types\MFileComparer.cs" />
+    <Compile Include="Types\MFolder.cs" />
+    <EmbeddedResource Include="Forms\Frm_About.resx">
+      <DependentUpon>Frm_About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Archives.resx">
+      <DependentUpon>Frm_Archives.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_AudioOptions.resx">
+      <DependentUpon>Frm_AudioOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Browser.resx">
+      <DependentUpon>Frm_Browser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Console.resx">
+      <DependentUpon>Frm_Console.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_ControlsSettings.resx">
+      <DependentUpon>Frm_ControlsSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_EnterName.resx">
+      <DependentUpon>Frm_EnterName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_GeneralOptions.resx">
+      <DependentUpon>Frm_GeneralOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Key.resx">
+      <DependentUpon>Frm_Key.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_main.resx">
+      <DependentUpon>Frm_main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Palette.resx">
+      <DependentUpon>Frm_Palette.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_PathsOptions.resx">
+      <DependentUpon>Frm_PathsOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_RomInfo.resx">
+      <DependentUpon>Frm_RomInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nes Video Mode\Frm_D3DOptions.resx">
+      <DependentUpon>Frm_D3DOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Nes\CycleFCMain.csproj">
+      <Project>{3DE8A70B-0B88-407F-81BF-4B16001D059C}</Project>
+      <Name>CycleFCMain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MyNesIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nes_j.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\starunrate.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Upp.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Down.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MyNesIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nes.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\properties.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Admin tools.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MyNes.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TV.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sound.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help Windows.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Record.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pause.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Opennnn.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\full_palette_1.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

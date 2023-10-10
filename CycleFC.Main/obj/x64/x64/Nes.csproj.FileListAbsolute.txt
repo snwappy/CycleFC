@@ -1,0 +1,9 @@
+H:\Snappy Codes\NES\refrence code\mynes\Nes\bin\x64\x64\Nes.dll
+H:\Snappy Codes\NES\refrence code\mynes\Nes\obj\x64\x64\Nes.csproj.AssemblyReference.cache
+H:\Snappy Codes\NES\refrence code\mynes\Nes\obj\x64\x64\MyNes.Nes.Properties.Resources.resources
+H:\Snappy Codes\NES\refrence code\mynes\Nes\obj\x64\x64\Nes.csproj.GenerateResource.cache
+H:\Snappy Codes\NES\refrence code\mynes\Nes\obj\x64\x64\Nes.csproj.CoreCompileInputs.cache
+H:\Snappy Codes\NES\refrence code\mynes\Nes\obj\x64\x64\Nes.dll
+H:\Snappy Codes\NES\refrence code\mynes\Nes\bin\x64\x64\SlimDX.dll
+H:\Snappy Codes\NES\refrence code\mynes\Nes\obj\x64\x64\Nes.csproj.CopyComplete
+H:\Snappy Codes\NES\refrence code\mynes\Nes\bin\x64\x64\SevenZip.dll

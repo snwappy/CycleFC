@@ -21,12 +21,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MyNes")]
+[assembly: AssemblyTitle("Nes")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MyNes")]
-[assembly: AssemblyCopyright("Copyright © Ala Hadid 2009 - 2011")]
+[assembly: AssemblyProduct("Nes emulation core")]
+[assembly: AssemblyCopyright("Copyright © Ala Hadid 2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -36,7 +36,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("fa4c2234-4e1c-4aea-bc2c-7874cbee9278")]
+[assembly: Guid("33fc64cd-4793-4544-932d-a5a75a34bbd1")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -48,5 +48,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("4.0.0.0")]
+[assembly: AssemblyVersion("4.0.*")]
 [assembly: AssemblyFileVersion("4.0.0.0")]
