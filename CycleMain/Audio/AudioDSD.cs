@@ -107,7 +107,9 @@ namespace CycleMain
                 {
                     buffer.Play(0, PlayFlags.Looping);
                 }
-                catch { }
+                catch {
+                    MessageBox.Show("Unexpected Error in buffer data", "DirectSound Exception in CycleFC", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
         }
         public void Stop()

@@ -26,7 +26,7 @@ namespace CycleMain
     static class Program
     {
         static mainWindow _mainForm;
-        static Properties.Settings _settings ;
+        static MyNes.Properties.Settings _settings ;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -36,7 +36,7 @@ namespace CycleMain
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            _settings = new Properties.Settings();
+            _settings = new MyNes.Properties.Settings();
             _settings.Reload();
 
             BuildControlProfile();
@@ -54,7 +54,7 @@ namespace CycleMain
         /// <summary>
         /// Get the application settings class
         /// </summary>
-        public static Properties.Settings Settings
+        public static MyNes.Properties.Settings Settings
         { get { return _settings; } }
 
         public static void BuildControlProfile()

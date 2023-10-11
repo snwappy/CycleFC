@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CycleMain.Properties {
+namespace MyNes.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -592,6 +592,18 @@ namespace CycleMain.Properties {
             }
             set {
                 this["PauseWhenFocusLost"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool EnableFadeInAnimation {
+            get {
+                return ((bool)(this["EnableFadeInAnimation"]));
+            }
+            set {
+                this["EnableFadeInAnimation"] = value;
             }
         }
     }

@@ -127,6 +127,7 @@ namespace CycleMain
             aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             AnimTimer = new System.Windows.Forms.Timer(components);
             WaitClock = new System.Windows.Forms.Timer(components);
+            FadeInTimer = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
             panel_surface.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -159,15 +160,20 @@ namespace CycleMain
             // 
             // label1
             // 
+            label1.AutoEllipsis = true;
             label1.AutoSize = true;
+            label1.BackColor = System.Drawing.Color.Transparent;
             label1.Dock = System.Windows.Forms.DockStyle.Bottom;
             label1.Font = new System.Drawing.Font("Yu Gothic UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             label1.ForeColor = System.Drawing.Color.White;
-            label1.Location = new System.Drawing.Point(0, 398);
+            label1.Location = new System.Drawing.Point(0, 393);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(58, 20);
+            label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            label1.Size = new System.Drawing.Size(57, 25);
             label1.TabIndex = 6;
             label1.Text = "(status)";
+            label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label1.UseCompatibleTextRendering = true;
             label1.Click += label1_Click;
             // 
             // pictureBox1
@@ -206,26 +212,26 @@ namespace CycleMain
             // openROMToolStripMenuItem
             // 
             openROMToolStripMenuItem.Name = "openROMToolStripMenuItem";
-            openROMToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            openROMToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             openROMToolStripMenuItem.Text = "&Open ROM";
             openROMToolStripMenuItem.Click += openROMToolStripMenuItem_Click;
             // 
             // closeROMToolStripMenuItem
             // 
             closeROMToolStripMenuItem.Name = "closeROMToolStripMenuItem";
-            closeROMToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            closeROMToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             closeROMToolStripMenuItem.Text = "&Close ROM";
             closeROMToolStripMenuItem.Click += closeROMToolStripMenuItem_Click;
             // 
             // toolStripSeparator11
             // 
             toolStripSeparator11.Name = "toolStripSeparator11";
-            toolStripSeparator11.Size = new System.Drawing.Size(177, 6);
+            toolStripSeparator11.Size = new System.Drawing.Size(130, 6);
             // 
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            exitToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             exitToolStripMenuItem.Text = "&Exit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
@@ -240,39 +246,39 @@ namespace CycleMain
             // 
             pauseToolStripMenuItem.CheckOnClick = true;
             pauseToolStripMenuItem.Name = "pauseToolStripMenuItem";
-            pauseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            pauseToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             pauseToolStripMenuItem.Text = "Pause";
             pauseToolStripMenuItem.Click += pauseToolStripMenuItem_Click;
             // 
             // toolStripSeparator22
             // 
             toolStripSeparator22.Name = "toolStripSeparator22";
-            toolStripSeparator22.Size = new System.Drawing.Size(177, 6);
+            toolStripSeparator22.Size = new System.Drawing.Size(151, 6);
             // 
             // hardResetToolStripMenuItem1
             // 
             hardResetToolStripMenuItem1.Name = "hardResetToolStripMenuItem1";
-            hardResetToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            hardResetToolStripMenuItem1.Size = new System.Drawing.Size(154, 22);
             hardResetToolStripMenuItem1.Text = "Hard reset";
             hardResetToolStripMenuItem1.Click += hardResetToolStripMenuItem1_Click;
             // 
             // softResetToolStripMenuItem1
             // 
             softResetToolStripMenuItem1.Name = "softResetToolStripMenuItem1";
-            softResetToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            softResetToolStripMenuItem1.Size = new System.Drawing.Size(154, 22);
             softResetToolStripMenuItem1.Text = "Soft reset";
             softResetToolStripMenuItem1.Click += softResetToolStripMenuItem1_Click;
             // 
             // toolStripSeparator23
             // 
             toolStripSeparator23.Name = "toolStripSeparator23";
-            toolStripSeparator23.Size = new System.Drawing.Size(177, 6);
+            toolStripSeparator23.Size = new System.Drawing.Size(151, 6);
             // 
             // consoleRegionToolStripMenuItem
             // 
             consoleRegionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { autoToolStripMenuItem1, toolStripSeparator26, nTSCUSAJapanToolStripMenuItem, pALEuropeToolStripMenuItem });
             consoleRegionToolStripMenuItem.Name = "consoleRegionToolStripMenuItem";
-            consoleRegionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            consoleRegionToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             consoleRegionToolStripMenuItem.Text = "Console region";
             // 
             // autoToolStripMenuItem1
@@ -304,69 +310,69 @@ namespace CycleMain
             // toolStripSeparator24
             // 
             toolStripSeparator24.Name = "toolStripSeparator24";
-            toolStripSeparator24.Size = new System.Drawing.Size(177, 6);
+            toolStripSeparator24.Size = new System.Drawing.Size(151, 6);
             // 
             // loadStateToolStripMenuItem1
             // 
             loadStateToolStripMenuItem1.Name = "loadStateToolStripMenuItem1";
-            loadStateToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            loadStateToolStripMenuItem1.Size = new System.Drawing.Size(154, 22);
             loadStateToolStripMenuItem1.Text = "Load State";
             loadStateToolStripMenuItem1.Click += loadStateToolStripMenuItem1_Click;
             // 
             // loadStateAsToolStripMenuItem1
             // 
             loadStateAsToolStripMenuItem1.Name = "loadStateAsToolStripMenuItem1";
-            loadStateAsToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            loadStateAsToolStripMenuItem1.Size = new System.Drawing.Size(154, 22);
             loadStateAsToolStripMenuItem1.Text = "Load State as";
             loadStateAsToolStripMenuItem1.Click += loadStateAsToolStripMenuItem1_Click;
             // 
             // toolStripSeparator28
             // 
             toolStripSeparator28.Name = "toolStripSeparator28";
-            toolStripSeparator28.Size = new System.Drawing.Size(177, 6);
+            toolStripSeparator28.Size = new System.Drawing.Size(151, 6);
             // 
             // saveStateToolStripMenuItem1
             // 
             saveStateToolStripMenuItem1.Name = "saveStateToolStripMenuItem1";
-            saveStateToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            saveStateToolStripMenuItem1.Size = new System.Drawing.Size(154, 22);
             saveStateToolStripMenuItem1.Text = "Save State";
             // 
             // saveStateAsToolStripMenuItem1
             // 
             saveStateAsToolStripMenuItem1.Name = "saveStateAsToolStripMenuItem1";
-            saveStateAsToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            saveStateAsToolStripMenuItem1.Size = new System.Drawing.Size(154, 22);
             saveStateAsToolStripMenuItem1.Text = "Save State as";
             saveStateAsToolStripMenuItem1.Click += saveStateAsToolStripMenuItem1_Click;
             // 
             // toolStripSeparator29
             // 
             toolStripSeparator29.Name = "toolStripSeparator29";
-            toolStripSeparator29.Size = new System.Drawing.Size(177, 6);
+            toolStripSeparator29.Size = new System.Drawing.Size(151, 6);
             // 
             // saveSRAMToolStripMenuItem
             // 
             saveSRAMToolStripMenuItem.Name = "saveSRAMToolStripMenuItem";
-            saveSRAMToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            saveSRAMToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             saveSRAMToolStripMenuItem.Text = "Save S-RAM";
             saveSRAMToolStripMenuItem.Click += saveSRAMToolStripMenuItem_Click;
             // 
             // loadSRAMToolStripMenuItem
             // 
             loadSRAMToolStripMenuItem.Name = "loadSRAMToolStripMenuItem";
-            loadSRAMToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            loadSRAMToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             loadSRAMToolStripMenuItem.Text = "Load S-RAM";
             loadSRAMToolStripMenuItem.Click += loadSRAMToolStripMenuItem_Click;
             // 
             // toolStripSeparator30
             // 
             toolStripSeparator30.Name = "toolStripSeparator30";
-            toolStripSeparator30.Size = new System.Drawing.Size(177, 6);
+            toolStripSeparator30.Size = new System.Drawing.Size(151, 6);
             // 
             // videoToolStripMenuItem
             // 
             videoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { fullScreenModeToolStripMenuItem, takeScreenshotToolStripMenuItem, toolStripSeparator31, windowSizeToolStripMenuItem, paletteWindowToolStripMenuItem });
             videoToolStripMenuItem.Name = "videoToolStripMenuItem";
-            videoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            videoToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             videoToolStripMenuItem.Text = "Video";
             // 
             // fullScreenModeToolStripMenuItem
@@ -456,7 +462,7 @@ namespace CycleMain
             // 
             audioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { audioChannelsToolStripMenuItem, audioRecorderToolStripMenuItem, toolStripSeparator33, volumeToolStripMenuItem });
             audioToolStripMenuItem.Name = "audioToolStripMenuItem";
-            audioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            audioToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             audioToolStripMenuItem.Text = "Audio";
             // 
             // audioChannelsToolStripMenuItem
@@ -680,6 +686,11 @@ namespace CycleMain
             // 
             WaitClock.Tick += WaitClock_Tick;
             // 
+            // FadeInTimer
+            // 
+            FadeInTimer.Interval = 15;
+            FadeInTimer.Tick += FadeInTimer_Tick;
+            // 
             // mainWindow
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -687,11 +698,12 @@ namespace CycleMain
             ClientSize = new System.Drawing.Size(568, 442);
             Controls.Add(panel1);
             Controls.Add(menuStrip1);
+            ForeColor = System.Drawing.Color.Black;
             Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
             Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Name = "mainWindow";
-            StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "CycleFC (MainWindowEvent)";
             Activated += Frm_main_Activated;
             Deactivate += Frm_main_Deactivate;
@@ -790,6 +802,7 @@ namespace CycleMain
         private System.Windows.Forms.Timer AnimTimer;
         private System.Windows.Forms.Timer WaitClock;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer FadeInTimer;
     }
 }
 

@@ -50,6 +50,7 @@ namespace CycleMain
             }
             checkBox1_sramsave.Checked = Program.Settings.AutoSaveSRAM;
             checkBox1_pause.Checked = Program.Settings.PauseWhenFocusLost;
+            checkBox_FadeIn.Checked = Program.Settings.EnableFadeInAnimation;
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -76,6 +77,7 @@ namespace CycleMain
             { Program.Settings.ImagesFormat = ".tiff"; }
             Program.Settings.AutoSaveSRAM = checkBox1_sramsave.Checked;
             Program.Settings.PauseWhenFocusLost = checkBox1_pause.Checked;
+            Program.Settings.EnableFadeInAnimation = checkBox_FadeIn.Checked;
             Program.Settings.Save();
             this.Close();
         }

@@ -56,6 +56,7 @@ namespace CycleMain
             checkBox1_sramsave = new System.Windows.Forms.CheckBox();
             checkBox1_pause = new System.Windows.Forms.CheckBox();
             groupBox2 = new System.Windows.Forms.GroupBox();
+            checkBox_FadeIn = new System.Windows.Forms.CheckBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -133,7 +134,7 @@ namespace CycleMain
             // 
             // button1
             // 
-            button1.Location = new System.Drawing.Point(14, 173);
+            button1.Location = new System.Drawing.Point(14, 197);
             button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             button1.Name = "button1";
             button1.Size = new System.Drawing.Size(88, 27);
@@ -144,7 +145,7 @@ namespace CycleMain
             // 
             // button2
             // 
-            button2.Location = new System.Drawing.Point(106, 173);
+            button2.Location = new System.Drawing.Point(106, 197);
             button2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             button2.Name = "button2";
             button2.Size = new System.Drawing.Size(88, 27);
@@ -155,7 +156,7 @@ namespace CycleMain
             // 
             // button3
             // 
-            button3.Location = new System.Drawing.Point(216, 173);
+            button3.Location = new System.Drawing.Point(216, 197);
             button3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             button3.Name = "button3";
             button3.Size = new System.Drawing.Size(88, 27);
@@ -188,23 +189,35 @@ namespace CycleMain
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(checkBox_FadeIn);
             groupBox2.Controls.Add(checkBox1_sramsave);
             groupBox2.Controls.Add(checkBox1_pause);
             groupBox2.Location = new System.Drawing.Point(14, 77);
             groupBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            groupBox2.Size = new System.Drawing.Size(289, 87);
+            groupBox2.Size = new System.Drawing.Size(289, 114);
             groupBox2.TabIndex = 6;
             groupBox2.TabStop = false;
             groupBox2.Text = "Misc";
+            // 
+            // checkBox_FadeIn
+            // 
+            checkBox_FadeIn.AutoSize = true;
+            checkBox_FadeIn.Location = new System.Drawing.Point(7, 73);
+            checkBox_FadeIn.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            checkBox_FadeIn.Name = "checkBox_FadeIn";
+            checkBox_FadeIn.Size = new System.Drawing.Size(255, 19);
+            checkBox_FadeIn.TabIndex = 6;
+            checkBox_FadeIn.Text = "Enable Application Launch Fade animation.";
+            checkBox_FadeIn.UseVisualStyleBackColor = true;
             // 
             // generalOptionsWindow
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.SystemColors.Control;
-            ClientSize = new System.Drawing.Size(309, 216);
+            ClientSize = new System.Drawing.Size(319, 253);
             ControlBox = false;
             Controls.Add(groupBox2);
             Controls.Add(button3);
@@ -240,5 +253,6 @@ namespace CycleMain
         private System.Windows.Forms.CheckBox checkBox1_sramsave;
         private System.Windows.Forms.CheckBox checkBox1_pause;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.CheckBox checkBox_FadeIn;
     }
 }

@@ -9,6 +9,8 @@ using CycleCore.Nes;
 using CycleCore.Nes.Output.Video;
 using System.Reflection;
 using MyNes.Windows;
+using System.Reflection.Emit;
+using Timer = System.Windows.Forms.Timer;
 
 namespace CycleMain
 {
@@ -26,11 +28,19 @@ namespace CycleMain
         private int greenPhase = 85;
         private int bluePhase = 170;
         private int backgroundPhase = 0;
+        private int currentOpacity = 0;
+        private int fadeStep = 10;
 
         public mainWindow(string[] Args)
         {
             InitializeComponent();
             LoadSettings();
+            this.Opacity = 1;
+            if (Program.Settings.EnableFadeInAnimation == true)
+            {
+                this.Opacity = 0;
+                FadeInTimer.Start();
+            }
         }
 
         void LoadSettings()
@@ -59,6 +69,7 @@ namespace CycleMain
             }
 
             VideoDevice = new VideoD3D(RegionFormat.NTSC, null);
+            FadeInTimer.Enabled = Program.Settings.EnableFadeInAnimation;
 
             RefreshControlsProfiles();
             SetVolumeLabel();
@@ -111,7 +122,7 @@ namespace CycleMain
                 mainThread = new Thread(new ThreadStart(NES.Execute));
                 mainThread.Start();
             }
-            AddRecent(FileName);
+            //AddRecent(FileName);
             RefreshStateFiles();
 
             uint crc32 = CalculateCRC32(FileName);
@@ -295,22 +306,22 @@ namespace CycleMain
                     item.Checked = true;
             }
         }
-        void AddRecent(string FilePath)
-        {
-            if (Program.Settings.Recents == null)
-                Program.Settings.Recents = new System.Collections.Specialized.StringCollection();
-            for (int i = 0; i < Program.Settings.Recents.Count; i++)
-            {
-                if (FilePath == Program.Settings.Recents[i])
-                {
-                    Program.Settings.Recents.Remove(FilePath);
-                }
-            }
-            Program.Settings.Recents.Insert(0, FilePath);
-            //limit to 9 elements
-            if (Program.Settings.Recents.Count > 9)
-                Program.Settings.Recents.RemoveAt(9);
-        }
+        //void AddRecent(string FilePath)
+        //{
+        //    if (Program.Settings.Recents == null)
+        //        Program.Settings.Recents = new System.Collections.Specialized.StringCollection();
+        //    for (int i = 0; i < Program.Settings.Recents.Count; i++)
+        //    {
+        //        if (FilePath == Program.Settings.Recents[i])
+        //        {
+        //            Program.Settings.Recents.Remove(FilePath);
+        //        }
+        //    }
+        //    Program.Settings.Recents.Insert(0, FilePath);
+        //    //limit to 9 elements
+        //    if (Program.Settings.Recents.Count > 9)
+        //        Program.Settings.Recents.RemoveAt(9);
+        //}
         void SetVolumeLabel()
         {
             string vol = ((((100 * (3000 - Program.Settings.Volume)) / 3000) - 200) * -1).ToString() + " %";
@@ -1274,8 +1285,7 @@ namespace CycleMain
             SaveSettings();
             if (this.NES != null)
                 this.NES.ShutDown();
-            if (mainThread != null)
-                Environment.Exit(0);
+            Environment.Exit(0);
         }
 
         private void AnimTimer_Tick(object sender, EventArgs e)
@@ -1387,6 +1397,21 @@ namespace CycleMain
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void FadeInTimer_Tick(object sender, EventArgs e)
+        {
+            if (currentOpacity < 255)
+            {
+                currentOpacity += fadeStep;
+                if (currentOpacity > 255)
+                    currentOpacity = 255;
+                this.Opacity = currentOpacity / 255.0;
+            }
+            else
+            {
+                timer1.Stop();
+            }
         }
     }
 }
