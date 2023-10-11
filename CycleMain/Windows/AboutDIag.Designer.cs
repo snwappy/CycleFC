@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutDiag));
+            var resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutDiag));
             pictureBox1 = new System.Windows.Forms.PictureBox();
             label1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
@@ -49,7 +49,7 @@
             pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
             pictureBox1.Location = new System.Drawing.Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(657, 178);
+            pictureBox1.Size = new System.Drawing.Size(657, 167);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 

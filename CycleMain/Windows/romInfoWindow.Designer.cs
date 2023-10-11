@@ -224,7 +224,7 @@ namespace CycleMain
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.SystemColors.Control;
-            ClientSize = new System.Drawing.Size(580, 180);
+            ClientSize = new System.Drawing.Size(576, 176);
             ControlBox = false;
             Controls.Add(groupBox2);
             Controls.Add(button1);
@@ -235,6 +235,7 @@ namespace CycleMain
             ShowInTaskbar = false;
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "ROM information";
+            Load += romInfoWindow_Load;
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             ResumeLayout(false);

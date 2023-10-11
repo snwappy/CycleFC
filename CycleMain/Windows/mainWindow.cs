@@ -178,9 +178,13 @@ namespace CycleMain
                 //Set tv format to make sure
                 if (Program.Settings.AutoSwitchTvformat)
                     if (NES.Cartridge.IsPAL)
-                    { Program.Settings.TVSystem = RegionFormat.PAL; CONSOLE.WriteLine(this, "PAL", DebugStatus.Notification); }
+                    {
+                        Program.Settings.TVSystem = RegionFormat.PAL; CONSOLE.WriteLine(this, "PAL", DebugStatus.Notification);
+                    }
                     else
-                    { Program.Settings.TVSystem = RegionFormat.NTSC; CONSOLE.WriteLine(this, "NTSC", DebugStatus.Notification); }
+                    {
+                        Program.Settings.TVSystem = RegionFormat.NTSC; CONSOLE.WriteLine(this, "NTSC", DebugStatus.Notification);
+                    }
 
                 NES.Ppu.Output = new VideoD3D(Program.Settings.TVSystem, panel_surface);
 
@@ -298,7 +302,9 @@ namespace CycleMain
             for (int i = 0; i < Program.Settings.Recents.Count; i++)
             {
                 if (FilePath == Program.Settings.Recents[i])
-                { Program.Settings.Recents.Remove(FilePath); }
+                {
+                    Program.Settings.Recents.Remove(FilePath);
+                }
             }
             Program.Settings.Recents.Insert(0, FilePath);
             //limit to 9 elements
@@ -320,7 +326,9 @@ namespace CycleMain
                 return;
             //If there's no rom, get out !!
             if (!File.Exists(NES.Cartridge.FilePath))
-            { return; }
+            {
+                return;
+            }
             NES.PAUSE = true;
             Directory.CreateDirectory(Path.GetFullPath(Program.Settings.ImagesFolder));
             int i = 1;
@@ -639,7 +647,9 @@ namespace CycleMain
             foreach (ToolStripMenuItem item in slotsToolStripMenuItem.DropDownItems)
             {
                 if (e.ClickedItem == item)
-                { item.Checked = true; SlotIndex = i; }
+                {
+                    item.Checked = true; SlotIndex = i;
+                }
                 else
                     item.Checked = false;
                 i++;
@@ -849,6 +859,16 @@ namespace CycleMain
         {
             if (NES != null)
                 NES.PAUSE = !NES.PAUSE;
+
+            if (pauseToolStripMenuItem.Checked == true)
+            {
+                label1.Visible = true;
+                label1.Text = "Paused.";
+            }
+            else
+            {
+                StatusData("Resumed.");
+            }
         }
 
         private void autoToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -1127,6 +1147,10 @@ namespace CycleMain
                 romInfoWindow rr = new romInfoWindow(NES.Cartridge.FilePath);
                 rr.ShowDialog();
                 NES.PAUSE = false;
+            }
+            else
+            {
+                MessageBox.Show("Please load the ROM first!", "No ROM info data", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

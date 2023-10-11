@@ -72,5 +72,10 @@ namespace CycleMain
             textBox.Copy();
             MessageBox.Show("Done !!");
         }
+
+        private void romInfoWindow_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
