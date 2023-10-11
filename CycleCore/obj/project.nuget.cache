@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "xsGQJ+a19x7VgiYB4EjKNUxRh4nSocmZaPenx78tgJiZA/px+zeP5r9eEP3tzVqqDSA4tPqxgnZ/E1qzACnN2w==",
+  "dgSpecHash": "Vbvg5UWeNL8nx/RBqIh05wC+mZ0jaU87HcZSfwGsrkw+UdJZ8j30pUJ0OaaLiq2kSVwEp7nKvom7oyeUkYkvPQ==",
   "success": true,
   "projectFilePath": "H:\\Snappy Codes\\NES\\CycleFC\\CycleCore\\CycleCore.csproj",
   "expectedPackageFiles": [
@@ -14,10 +14,10 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'SlimDX 4.0.13.44' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0-windows7.0'. This package may not be fully compatible with your project.",
+      "message": "Package 'SlimDX 4.0.13.44' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0-windows7.0'. This package may not be fully compatible with your project.",
       "libraryId": "SlimDX",
       "targetGraphs": [
-        "net7.0-windows7.0"
+        "net6.0-windows7.0"
       ]
     }
   ]

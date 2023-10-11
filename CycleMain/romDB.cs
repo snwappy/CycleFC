@@ -182,7 +182,7 @@ class romDB
         }
         else
         {
-            return "Unable to find the CRC in the database.";
+            return "NES / Famicom ROM";
         }
     }
 }

@@ -1,0 +1,12 @@
+H:\Snappy Codes\NES\CycleFC\CycleCore\bin\x86\Debug\net6.0-windows\Nes.deps.json
+H:\Snappy Codes\NES\CycleFC\CycleCore\bin\x86\Debug\net6.0-windows\Nes.dll
+H:\Snappy Codes\NES\CycleFC\CycleCore\bin\x86\Debug\net6.0-windows\Nes.pdb
+H:\Snappy Codes\NES\CycleFC\CycleCore\obj\x86\Debug\net6.0-windows\CycleCore.csproj.AssemblyReference.cache
+H:\Snappy Codes\NES\CycleFC\CycleCore\obj\x86\Debug\net6.0-windows\MyNes.Nes.Properties.Resources.resources
+H:\Snappy Codes\NES\CycleFC\CycleCore\obj\x86\Debug\net6.0-windows\CycleCore.csproj.GenerateResource.cache
+H:\Snappy Codes\NES\CycleFC\CycleCore\obj\x86\Debug\net6.0-windows\CycleCore.GeneratedMSBuildEditorConfig.editorconfig
+H:\Snappy Codes\NES\CycleFC\CycleCore\obj\x86\Debug\net6.0-windows\CycleCore.csproj.CoreCompileInputs.cache
+H:\Snappy Codes\NES\CycleFC\CycleCore\obj\x86\Debug\net6.0-windows\Nes.dll
+H:\Snappy Codes\NES\CycleFC\CycleCore\obj\x86\Debug\net6.0-windows\refint\Nes.dll
+H:\Snappy Codes\NES\CycleFC\CycleCore\obj\x86\Debug\net6.0-windows\Nes.pdb
+H:\Snappy Codes\NES\CycleFC\CycleCore\obj\x86\Debug\net6.0-windows\ref\Nes.dll

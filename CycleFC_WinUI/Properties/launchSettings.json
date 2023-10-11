@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "CycleFC_WinUI (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "CycleFC_WinUI (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

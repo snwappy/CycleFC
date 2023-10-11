@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "CycleMain_WinUI (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "CycleMain_WinUI (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
