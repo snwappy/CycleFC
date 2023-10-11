@@ -1,10 +1,10 @@
 ﻿/*********************************************************************\r
 *This file is part of CycleFC                                         *               
 *                                                                     *
-*Original code © Ala Hadid 2009 - 2011                                *
+*Original code © Ala Hadid 2009 - 2015                                *
 *Code maintainance by Snappy Pupper (@snappypupper on Twitter)        *
 *Code updated: October 2023                                           *
-*                                                                     *                                                                     *
+*                                                                     *                                                                     
 *CycleFC is a fork of the original MyNES,                             *
 *which is free software: you can redistribute it and/or modify        *
 *it under the terms of the GNU General Public License as published by *
