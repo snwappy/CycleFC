@@ -20,7 +20,8 @@ This is a fork of the original MyNES emulator created by Ala Hadid in C# from 20
 - Audio Channels Mixer
 
 ## To-do:
-- Currently, Archive file codes are removed and expected to be added back soon,
+- Currently, Archive file codes are removed and expected to be added back soon.
+- VRC7 FM Support
 - Recent files are being added back soon.
 - Add more renderers including OpenGL, and Vulkan, and replace the deprecated (SlimDX with SharpDX for the current DirectX 9, and to support DirectX 11)
 - Add more audio output API options to replace DirectSound (Such as NAudio, XAudio2, etc...)
