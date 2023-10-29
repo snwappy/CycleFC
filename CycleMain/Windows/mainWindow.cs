@@ -11,10 +11,12 @@ using System.Reflection;
 using MyNes.Windows;
 using System.Reflection.Emit;
 using Timer = System.Windows.Forms.Timer;
+using OpenTK;
+using OpenTK.Graphics.OpenGL;
 
 namespace CycleMain
 {
-    public partial class mainWindow : Form
+    public partial class mainWindow : System.Windows.Forms.Form
     {
         Thread mainThread;
         public NesSystem NES;
@@ -30,10 +32,14 @@ namespace CycleMain
         private int backgroundPhase = 0;
         private int currentOpacity = 0;
         private int fadeStep = 10;
+        public OpenFileDialog op = new OpenFileDialog();
+        public GLControl glControl = new GLControl();
 
         public mainWindow(string[] Args)
         {
             InitializeComponent();
+            glControl.Dock = DockStyle.Fill; // Set the control to fill the form
+            Controls.Add(glControl);
             LoadSettings();
             this.Opacity = 1;
             if (Program.Settings.EnableFadeInAnimation == true)
@@ -68,7 +74,8 @@ namespace CycleMain
                 case "stretch": stretchToolStripMenuItem1.Checked = true; break;
             }
 
-            VideoDevice = new VideoD3D(RegionFormat.NTSC, null);
+            GLControl glControl = null;
+            VideoDevice = new VideoOpenGL(RegionFormat.NTSC, glControl);
             FadeInTimer.Enabled = Program.Settings.EnableFadeInAnimation;
 
             RefreshControlsProfiles();
@@ -130,8 +137,7 @@ namespace CycleMain
 
             string targetCRC = convertString;
             string gameName = romDB.FindGameNameByCRC(targetCRC);
-
-            Text = gameName + " | CycleFC";
+            Text = gameName + " | CycleFC (Running)";
         }
 
         void SetupScreenPosition()
@@ -197,7 +203,7 @@ namespace CycleMain
                         Program.Settings.TVSystem = RegionFormat.NTSC; CONSOLE.WriteLine(this, "NTSC", DebugStatus.Notification);
                     }
 
-                NES.Ppu.Output = new VideoD3D(Program.Settings.TVSystem, panel_surface);
+                NES.Ppu.Output = new VideoOpenGL(Program.Settings.TVSystem, glControl);
 
                 VideoDevice = NES.Ppu.Output;
 
@@ -721,7 +727,7 @@ namespace CycleMain
             if (NES != null)
                 NES.PAUSE = true;
             if (VideoDevice == null)
-                VideoDevice = new VideoD3D(RegionFormat.NTSC, panel_surface);
+                VideoDevice = new VideoOpenGL(RegionFormat.NTSC, glControl);
             VideoDevice.ChangeSettings();
             if (NES != null)
                 NES.PAUSE = false;
@@ -804,13 +810,14 @@ namespace CycleMain
             WaitClock.Interval = 3000;
             WaitClock.Tick += new EventHandler(WaitClock_Tick);
             StatusData("CycleFC Initialized.");
+
         }
 
         private void openROMToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (NES != null)
                 NES.PAUSE = true;
-            OpenFileDialog op = new OpenFileDialog();
+
             op.Title = "Open NES / Famicom ROM images";
             op.Filter = "NES / Famicom ROM Files (*.nes)|*.nes;*.NES";
             if (op.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
@@ -868,6 +875,12 @@ namespace CycleMain
 
         private void pauseToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            uint crc32 = CalculateCRC32(op.FileName);
+            string convertString = crc32.ToString("X8");
+
+            string targetCRC = convertString;
+            string gameName = romDB.FindGameNameByCRC(targetCRC);
+
             if (NES != null)
                 NES.PAUSE = !NES.PAUSE;
 
@@ -875,10 +888,12 @@ namespace CycleMain
             {
                 label1.Visible = true;
                 label1.Text = "Paused.";
+                Text = gameName + " | CycleFC (Paused)";
             }
             else
             {
                 StatusData("Resumed.");
+                Text = gameName + " | CycleFC (Running)";
             }
         }
 
@@ -1198,7 +1213,7 @@ namespace CycleMain
             if (NES != null)
                 NES.PAUSE = true;
             if (VideoDevice == null)
-                VideoDevice = new VideoD3D(RegionFormat.NTSC, panel_surface);
+                VideoDevice = new VideoOpenGL(RegionFormat.NTSC, glControl);
             VideoDevice.ChangeSettings();
             if (NES != null)
                 NES.PAUSE = false;

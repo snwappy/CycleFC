@@ -11,24 +11,6 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
-      "SevenZip/19.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/SevenZip.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/SevenZip.dll": {}
-        }
-      },
-      "SlimDX/4.0.13.44": {
-        "type": "package",
-        "compile": {
-          "lib/NET40/SlimDX.dll": {}
-        },
-        "runtime": {
-          "lib/NET40/SlimDX.dll": {}
-        }
-      },
       "System.Data.DataSetExtensions/4.5.0": {
         "type": "package",
         "compile": {
@@ -110,34 +92,6 @@
         "version.txt"
       ]
     },
-    "SevenZip/19.0.0": {
-      "sha512": "+Eeb/uvC0REvMlG1auBqlBMiFiPZs+WizlLroHPSKtBh/V7NR/qOocgk+/7S0lNzciYsurMCeJzUL7LYIqVnWw==",
-      "type": "package",
-      "path": "sevenzip/19.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net20/SevenZip.dll",
-        "lib/netstandard2.0/SevenZip.dll",
-        "pack-package.cmd",
-        "publish-package.cmd",
-        "sevenzip.19.0.0.nupkg.sha512",
-        "sevenzip.nuspec"
-      ]
-    },
-    "SlimDX/4.0.13.44": {
-      "sha512": "Oj8ICZ3tIGvd93s5W6wSWXckDb3payQCo4fWp7GKPwnnGck7wEHHBZwnwfJJTdNb+t+IYr4HJCu07YhZ82xrIg==",
-      "type": "package",
-      "path": "slimdx/4.0.13.44",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/NET20/SlimDX.dll",
-        "lib/NET40/SlimDX.dll",
-        "slimdx.4.0.13.44.nupkg.sha512",
-        "slimdx.nuspec"
-      ]
-    },
     "System.Data.DataSetExtensions/4.5.0": {
       "sha512": "221clPs1445HkTBZPL+K9sDBdJRB8UN8rgjO3ztB0CQ26z//fmJXtlsr6whGatscsKGBrhJl5bwJuKSA8mwFOw==",
       "type": "package",
@@ -161,8 +115,6 @@
   "projectFileDependencyGroups": {
     "net7.0-windows7.0": [
       "Microsoft.CSharp >= 4.7.0",
-      "SevenZip >= 19.0.0",
-      "SlimDX >= 4.0.13.44",
       "System.Data.DataSetExtensions >= 4.5.0"
     ]
   },
@@ -214,14 +166,6 @@
             "target": "Package",
             "version": "[4.7.0, )"
           },
-          "SevenZip": {
-            "target": "Package",
-            "version": "[19.0.0, )"
-          },
-          "SlimDX": {
-            "target": "Package",
-            "version": "[4.0.13.44, )"
-          },
           "System.Data.DataSetExtensions": {
             "target": "Package",
             "version": "[4.5.0, )"
@@ -249,17 +193,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'SlimDX 4.0.13.44' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0-windows7.0'. This package may not be fully compatible with your project.",
-      "libraryId": "SlimDX",
-      "targetGraphs": [
-        "net7.0-windows7.0"
-      ]
-    }
-  ]
+  }
 }

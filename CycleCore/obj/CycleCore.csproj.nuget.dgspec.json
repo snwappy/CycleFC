@@ -48,14 +48,6 @@
               "target": "Package",
               "version": "[4.7.0, )"
             },
-            "SevenZip": {
-              "target": "Package",
-              "version": "[19.0.0, )"
-            },
-            "SlimDX": {
-              "target": "Package",
-              "version": "[4.0.13.44, )"
-            },
             "System.Data.DataSetExtensions": {
               "target": "Package",
               "version": "[4.5.0, )"
